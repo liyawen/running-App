@@ -1,27 +1,29 @@
 'use strict';
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'aA19940121',
-  database : 'sport'
+let mysql = require('mysql');
+let connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'yedeying',
+  database: 'sport'
 });
 
 connection.connect();
 
-exports.query =function (sql) {
-	return new Promise(function (resolve, reject) {
-		connection.query(sql, function (err, rows, fields) {
-			if (err) {
-				reject(err);
-			} else {
-				resolve(rows);
-			}
-		});
-	});
+exports.query = function (sql) {
+  return new Promise(function (resolve, reject) {
+    let query = connection.query(sql, function (err, rows) {
+      if (err) {
+        err.sql = query.sql;
+        reject(err);
+      } else {
+        rows.sql = query.sql;
+        resolve(rows);
+      }
+    });
+  });
 };
 
 exports.end = function () {
-	connection.end();
+  connection.end();
 };
