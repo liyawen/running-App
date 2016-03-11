@@ -1,3 +1,4 @@
+<link href="css/login.css" rel="stylesheet">
 <div class="login-content" ng-app>
   <div class="bg"></div>
 	<div>
@@ -6,13 +7,13 @@
       <div class="list">
           <label class="item item-input item-input-first">
             <i class="ion-email input-pic"></i>
-            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Username" ng-model="userName" ng-change="getUserName({{userName}})">
             <i class="ion-checkmark-circled input-right"></i>
             <i class="ion-close-circled input-error"></i>
           </label>
           <label class="item item-input">
             <i class="ion-ios-locked input-pic"></i>
-            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Password" ng-model="password">{{userName}}
             <i class="ion-checkmark-circled input-right"></i>
             <i class="ion-close-circled input-error"></i>
           </label>
