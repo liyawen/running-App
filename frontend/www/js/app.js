@@ -29,6 +29,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/login',
     templateUrl: '/templates/login.html',
     controller: 'loginCtrl'
+  })
+  .state('register', {
+    url: '/register',
+    templateUrl: '/templates/register.html',
+    controller: 'registerCtrl' 
   });
   $urlRouterProvider.otherwise('/login');
 })
