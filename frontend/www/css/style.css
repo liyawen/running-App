@@ -68,3 +68,16 @@ div {
     min-height: 50px;
     font-size: 20px;
 }
+
+.small-btn {
+    font-size: 14px;
+    height: 20px;
+    line-height: 15px;
+    min-height: 20px;
+}
+
+.separator {
+    color: #b2b2b2;
+    position: relative;
+    font-size: 12px;
+}
