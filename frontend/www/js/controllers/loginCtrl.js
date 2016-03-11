@@ -8,8 +8,11 @@ angular.module('starter.controllers', ['starter.services'])
 		username: $scope.userName,
 		password: $scope.password
 	}
-	$http.post('localhost:3000/register/', params).success(function (res) {
+	$scope.sendUserMsg = function () {
+		$http.post('http://localhost:3000/register/', params).success(function (res) {
 		alert(res.msg);
 	})
+	}
+	
 
 })
