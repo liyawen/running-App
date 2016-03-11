@@ -1,12 +1,10 @@
 angular.module('starter.services', [])
 
-.factory('login', function ($scope) {
+.factory('login', function () {
 	return {
-		getUserName: function (userName) {
-			if (userName == '00') {
-				console.log($scope.userName)
-				alert("yeyeyeye");
-			}
+		getUser: function (scope) {
+			console.log(scope.userName);
+			
 		}
 	}
 });
