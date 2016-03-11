@@ -10,6 +10,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/register/', function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
   let model = new UserModel();
   model.register(req).then(function (result) {
     res.send(JSON.stringify(result));
