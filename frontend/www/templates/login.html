@@ -1,4 +1,4 @@
-
+<link href="css/login.css" rel="stylesheet">
 <div class="login-content" ng-app>
   <div class="bg"></div>
 	<div>
@@ -6,17 +6,30 @@
     <div class="list-wrapper">
       <div class="list">
           <label class="item item-input item-input-first">
-            <span class="input-label">Username</span>
-            <input type="text">
+            <i class="ion-email input-pic"></i>
+            <input type="text" placeholder="Username" ng-model="userName" ng-change="getUserName({{userName}})">
+            <i class="ion-checkmark-circled input-right"></i>
+            <i class="ion-close-circled input-error"></i>
           </label>
           <label class="item item-input">
-            <span class="input-label">Password</span>
-            <input type="password">
+            <i class="ion-ios-locked input-pic"></i>
+            <input type="password" placeholder="Password" ng-model="password">{{userName}}
+            <i class="ion-checkmark-circled input-right"></i>
+            <i class="ion-close-circled input-error"></i>
           </label>
       </div>
       <div class="btn-wrapper">
         <button class="button button-block login-btn">
           登录
+        </button>
+      </div>
+      <div class="col col-center" style="text-align: center;padding: 0px;">
+        <button class="button button-clear button-stable small-btn">
+          忘记密码
+        </button>
+        <span class="separator">|</span>
+        <button class="button button-clear button-stable small-btn">
+          快速注册
         </button>
       </div>
     </div>
