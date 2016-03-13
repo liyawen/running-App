@@ -1,0 +1,25 @@
+div {
+	background-color: transparent;
+}
+
+.bg {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-image: url(../img/backPic.jpg);
+	background-size: 100%;
+}
+
+.re-label-wrapper {
+	background-color: transparent;
+	border-top: 0;
+}
+
+.re-span-wrapper {
+	color: #ccc;
+	width: 20%;
+}
+
+.re-input-wrapper {
+	color: #ccc;
+}

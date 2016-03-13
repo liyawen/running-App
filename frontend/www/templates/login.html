@@ -7,29 +7,39 @@
       <div class="list">
           <label class="item item-input item-input-first">
             <i class="ion-email input-pic"></i>
-            <input type="text" placeholder="Username" ng-model="userName" ng-change="getUserName()">
+            <input type="email" placeholder="邮箱" ng-model="email" ng-change="getUserName()">
             <!-- <i class="ion-checkmark-circled input-right"></i>
             <i class="ion-close-circled input-error"></i> -->
           </label>
           <label class="item item-input">
             <i class="ion-ios-locked input-pic"></i>
-            <input type="password" placeholder="Password" ng-model="password">
+            <input type="password" placeholder="密码" ng-model="password">
             <!-- <i class="ion-checkmark-circled input-right"></i>
             <i class="ion-close-circled input-error"></i> -->
           </label>
+          <label class="item item-input"  ng-show="k">
+            <i class="ion-ios-locked input-pic"></i>
+            <input type="password" placeholder="确认密码" ng-model="confirmPassword">
+          </label>
       </div>
       <div class="btn-wrapper">
-        <button class="button button-block login-btn" ng-click="sendUserMsg()">
+        <button class="button button-block login-btn" ng-hide="k" ng-click="sendUserMsg()">
           登录
         </button>
+        <button class="button button-block register-btn" ng-show="k" ng-click="jumpRegister()">
+          注册
+        </button>
       </div>
-      <div class="col col-center" style="text-align: center;padding: 0px;">
+      <div class="col col-center small-btn-wrapper">
         <button class="button button-clear button-stable small-btn">
           忘记密码
         </button>
         <span class="separator">|</span>
-        <button class="button button-clear button-stable small-btn" ng-click="jumpRegister()">
+        <button class="button button-clear button-stable small-btn" ng-hide="k" ng-click="k = !k">
           快速注册
+        </button>
+        <button class="button button-clear button-stable small-btn" ng-show="k" ng-click="k = !k">
+          快速登陆
         </button>
       </div>
     </div>

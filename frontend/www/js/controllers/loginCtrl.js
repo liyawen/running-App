@@ -1,23 +1,20 @@
-angular.module('starter.controllers', ['starter.services'])
+angular.module('starter.controllers')
 
-.controller('loginCtrl', function($scope, $http, $state, login) {
-	// $scope.getUserName = function () {
-	// 	login.getUser($scope);
-	// }
-	
-	$scope.sendUserMsg = function () {
-		var params = {
-			username: $scope.userName,
-			password: $scope.password
-		}
-		$http.post('http://localhost:3000/register/', params).success(function (res) {
-			alert(res.msg);
-		})
-	}
+.controller('loginCtrl', function($scope, $state, login) {
+    // $scope.getUserName = function () {
+    //  login.getUser($scope);
+    // }
+    
+    $scope.sendUserMsg = function () {
+        login.sendUserMsg($scope);
+    }
 
-	$scope.jumpRegister = function () {
-		$state.go('register');
-	}
-	
+    // $scope.register = function () {
+    //     $scope.confirmPassword.
+    // }
+    $scope.jumpRegister = function () {
+        $state.go('register');
+    }
+    
 
 })
