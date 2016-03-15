@@ -2,8 +2,9 @@
 
 let express = require('express');
 let router = express.Router();
-let userTmpModel = require('../model/userTmpModel');
-let userModel = require('../model/userModel');
+let UserTmpModel = require('../model/userTmpModel');
+let UserModel = require('../model/userModel');
+let UserLoginModel = require('../model/userLoginModel');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -12,7 +13,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/userTmp/', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  let model = new userTmpModel();
+  let model = new UserTmpModel();
   model.register(req).then(function (result) {
     res.send(JSON.stringify(result));
   });
@@ -20,8 +21,16 @@ router.post('/userTmp/', function (req, res, next) {
 
 router.post('/register/', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  let model = new userModel();
+  let model = new UserModel();
   model.register(req).then(function (result) {
+    res.send(JSON.stringify(result));
+  });
+});
+
+router.post('/login/', function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  let model = new UserLoginModel();
+  model.login(req).then(function (result) {
     res.send(JSON.stringify(result));
   });
 });

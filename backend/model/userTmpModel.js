@@ -19,7 +19,7 @@ UserTmpModel.prototype.validate = function (req) {
     return new Error('邮箱格式错误');
   }
   if (!/^[a-zA-Z0-9]{6,20}$/.test(password)) {
-    return new Error('密码只许为大小写字母或数字，长度8-20');
+    return new Error('密码只许为大小写字母或数字，长度6-20');
   }
 
   return false;
