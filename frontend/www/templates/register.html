@@ -1,16 +1,15 @@
 <link rel="stylesheet" href="css/register.css">
-<div class="list bg">
-	<label class="item item-input re-label-wrapper">
-	    <span class="input-label re-span-wrapper">email</span>
-	    <input class="re-input-wrapper" type="text">
-	</label>
-	<label class="item item-input re-label-wrapper">
-	    <span class="input-label re-span-wrapper">email</span>
-	    <input class="re-input-wrapper" type="text">
-	</label>
-	<label class="item item-input re-label-wrapper">
-	    <span class="input-label re-span-wrapper">email</span>
-	    <input class="re-input-wrapper" type="text">
-	</label>
-
+<div class="login-content bg" ng-app>
+    
+    <div class="list" style="margin: 0 10%;">
+        <label class="item item-input re-label-wrapper" ng-repeat="x in userMsg">
+            <span class="input-label re-span-wrapper">{{x.name}}</span>
+            <input class="re-input-wrapper" type="text" ng-model="x.value">
+        </label>
+        <div class="btn-wrapper">
+            <button class="button button-calm btn-register" ng-click="getAllMsg()">
+                完成
+            </button>
+        </div>
+    </div>
 </div>

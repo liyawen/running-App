@@ -38,3 +38,4 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise('/login');
 })
 angular.module('starter.controllers', ['starter.services'])
+angular.module('starter.services',[])

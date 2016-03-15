@@ -1,19 +1,20 @@
 angular.module('starter.controllers')
 
-.controller('loginCtrl', function($scope, $state, login) {
+.controller('loginCtrl', function($scope, $state, Login) {
     // $scope.getUserName = function () {
     //  login.getUser($scope);
     // }
     
     $scope.sendUserMsg = function () {
-        login.sendUserMsg($scope);
+        Login.sendUserMsg($scope);
     }
 
     // $scope.register = function () {
     //     $scope.confirmPassword.
     // }
     $scope.jumpRegister = function () {
-        $state.go('register');
+        Login.jumpRegister($scope);
+        
     }
     
 
