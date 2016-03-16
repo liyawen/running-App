@@ -1,0 +1,57 @@
+.home-wrapper {
+    background: rgb(36, 41, 42);
+}
+
+.header-wrapper {
+    position: fixed;
+    height: 37%;
+    width: 100%;
+    background-image: url(../img/homePic.jpg);
+    background-size: 100%;
+}
+
+.nav-style {
+    height: 20px;
+    color: #fff;
+}
+
+.nav-style:hover {
+    color: #fff;
+}
+
+.user-pic {
+    position: absolute;
+    left: 37%;
+    top: 30%;
+    width:100px;
+    height:100px;
+    border-radius: 50px;
+    background-image: url(../img/peason.jpg);
+    background-size: 100%;
+}
+
+.user-nickname {
+    position: absolute;
+    left: 37%;
+    top: 75%;
+    width: 100px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.home-content {
+    position: absolute;
+    top: 38%;
+    width: 100%;
+    color: #fff;
+    padding: 10px 25px;
+}
+.start-btn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+

@@ -46,6 +46,7 @@ UserModel.prototype.register = function (req) {
 		console.log(res);
 		return {
 			status: 0,
+			id: res[0].id,
 			msg: '插入成功'
 		};
 	}).catch(function (err) {
