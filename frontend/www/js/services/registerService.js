@@ -43,10 +43,12 @@ angular.module('starter.services')
 		all: function () {
 			return userMsg;
 		},
-		getAllMsg: function (scope) {
+		getAllMsg: function (scope, ionicPopup) {
 			for (var i = 0; i < userMsg.length; i++) {
 				if (userMsg[i].value == '') {
-					alert(userMsg[i].name + '没有填写！')
+					ionicPopup.alert({
+				       title: userMsg[i].name + '没有填写！'
+				    });
 				}
 			}
 			var params = {
@@ -54,7 +56,14 @@ angular.module('starter.services')
 				currentTid: $rootScope.currentTid
 			}
 			$http.post('http://localhost:3000/register/', params).success(function (res) {
-				console.log(res);
+				if (res.status == 0) {
+					$rootScope.userId = res.id;
+					$state.go('homePage');
+				} else {
+					ionicPopup.alert({
+				       title: res.msg
+				    });
+				}
 			})
 		}
 	}

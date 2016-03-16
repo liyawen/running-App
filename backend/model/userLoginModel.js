@@ -22,21 +22,21 @@ UserLoginModel.prototype.login = function (req) {
         status: -1,
         msg: '该用户不存在！'
       }
-    }
-    return res;
-  }).then(function (res) {
-    let newPass = me.getPassword(password, res[0].salt);
-    if (newPass == res[0].password) {
-      return {
-        status: 0,
-        msg: '登陆成功！'
-      };
     } else {
-      return {
-        status: -2,
-        msg: '密码错误！'
-      };
-    }
+      let newPass = me.getPassword(password, res[0].salt);
+      if (newPass == res[0].password) {
+        return {
+          status: 0,
+          id: res[0].id,
+          msg: '登陆成功！'
+        };
+      } else {
+        return {
+          status: -2,
+          msg: '密码错误！'
+        };
+      }
+    }    
   }).catch(function (err) {
     return {
       status: 1,
