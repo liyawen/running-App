@@ -1,5 +1,8 @@
-angular.module('starter.controllers', ['starter.services'])
+angular.module('starter.controllers')
 
-.controller('registerCtrl', function ($scope) {
-
+.controller('registerCtrl', function ($scope, $ionicPopup, Register) {
+	$scope.userMsg = Register.all();
+	$scope.getAllMsg = function () {
+		Register.getAllMsg($scope, $ionicPopup);
+	}
 })

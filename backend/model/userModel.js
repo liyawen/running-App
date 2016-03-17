@@ -2,79 +2,60 @@
 let util = require('./util');
 let db = require('./db');
 
-function UserModel() {
-  this.defaultName = 'ye';
+function UserModel () {
+
 }
 
 UserModel.prototype.validate = function (req) {
-  let username = req.body.username;
-  let password = req.body.password;
-  if (!username) {
-    return new Error('用户名不能为空');
-  }
-  if (!password) {
-    return new Error('密码不能为空');
-  }
-  if (!/^[a-zA-Z0-9]{8,20}$/.test(username)) {
-    return new Error('用户名只许为大小写字母或数字，长度8-20');
-  }
-  if (!/^[a-zA-Z0-9]{8,20}$/.test(password)) {
-    return new Error('密码只许为大小写字母或数字，长度8-20');
-  }
+	let userMsg = req.body.userMsg;
+	let currentTid = req.body.currentTid;
 
-  return false;
-};
+	if (!currentTid) {
+		return new Error('tid为空！');
+	}
+	 return false;
+}
 
 UserModel.prototype.register = function (req) {
-  let me = this;
-  let username = req.body.username;
-  let oriPass = req.body.password;
+	let me = this;
+	let userMsg = req.body.userMsg;
+	let currentTid = req.body.currentTid;
 
-  let error = this.validate(req);
-  if (error) {
-    return Promise.resolve({
-      status: 1,
-      msg: error.message
-    });
-  }
+	let error = me.validate(req);
+	if (error) {
+		return Promise.resolve({
+			status: 1,
+			msg: error.message
+		});
+	}
 
-  // 231242353534
-  // salt = sha1(+new Date())
-  // password = sha1(password + salt)
-  // salt  password
-
-  return db.query(`select * from user where username = '${username}'`).then(function (res) {
-    if (res.length > 0) {
-      throw new Error('该用户已存在');
-    }
-    return 1;
-  }).then(function () {
-    let newPass = me.getPassword(oriPass);
-    return db.query(`
-      insert into user (username, password, salt) values
-      ('${username}', '${newPass.value}', '${newPass.salt}')
-    `);
-  }).then(function () {
-    return {
-      status: 0,
-      msg: '插入成功'
-    };
-  }).catch(function (err) {
-    return {
-      status: 1,
-      msg: err.message,
-      sql: err.sql
-    };
-  });
-};
-
-UserModel.prototype.getPassword = function (oriPass) {
-  let salt = util.sha1((+new Date()).toString());
-  let newPass = util.sha1(oriPass + 'O_O' + salt);
-  return {
-    salt: salt,
-    value: newPass
-  };
-};
+	return db.query(`select * from user_tmp where id = '${currentTid}'`).then(function (res) {
+		if (res.length <= 0) {
+			return new Error('不存在该用户！');
+		}
+		console.log(res);
+		return res;
+	}).then(function (res) {
+		let sql = `insert into user (email, password, nickname, gendle, age, 
+			height, weight, shoeSize, pelvisHeight, pelvisWidth, KneeHeight, KneeWidth, 
+			AnkleHeight, AnkleWidth, salt) VALUES ('${res[0].email}','${res[0].password}','${userMsg[0].value}',
+			'${userMsg[1].value}','${userMsg[2].value}','${userMsg[3].value}','${userMsg[4].value}','${userMsg[5].value}','${userMsg[6].value}',
+			'${userMsg[7].value}','${userMsg[8].value}','${userMsg[9].value}','${userMsg[10].value}','${userMsg[11].value}','${res[0].salt}')`;
+		return db.query(sql);
+	}).then(function (res) {
+		console.log(res);
+		return {
+			status: 0,
+			id: res[0].id,
+			msg: '插入成功'
+		};
+	}).catch(function (err) {
+		return {
+			status: 1,
+			msg: err.message,
+			sql: err.sql
+		};
+	});
+}
 
 module.exports = UserModel;

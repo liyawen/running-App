@@ -1,5 +1,15 @@
-<div class="card">
-  <div class="item item-text-wrap">
-    This is a basic Card which contains an item that has wrapping text.
-  </div>
+<link rel="stylesheet" href="css/register.css">
+<div class="login-content bg" ng-app>
+    
+    <div class="list" style="margin: 0 10%;">
+        <label class="item item-input re-label-wrapper" ng-repeat="x in userMsg">
+            <span class="input-label re-span-wrapper">{{x.name}}</span>
+            <input class="re-input-wrapper" type="text" ng-model="x.value">
+        </label>
+        <div class="btn-wrapper">
+            <button class="button button-calm btn-register" ng-click="getAllMsg()">
+                完成
+            </button>
+        </div>
+    </div>
 </div>
