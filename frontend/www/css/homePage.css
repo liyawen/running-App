@@ -1,5 +1,5 @@
 .home-wrapper {
-    background: rgb(36, 41, 42);
+    background-color: rgb(36, 41, 42);
 }
 
 .header-wrapper {
@@ -45,12 +45,20 @@
     top: 38%;
     width: 100%;
     color: #fff;
-    padding: 10px 25px;
+    overflow: auto;
 }
 .start-btn {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+.no-result-tip {
+    padding: 10px 25px;
+}
+
+.run-record {
+    background-color: rgb(36, 41, 42);
+    color: #fff;
 }
 
 
