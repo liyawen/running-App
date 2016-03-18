@@ -1,0 +1,59 @@
+.big-bar {
+	height: 55px;
+}
+
+#big-word {
+	height: 55px;
+	line-height: 55px;
+	font-size: 20px;
+}
+
+.data-msg {
+	position: relative;
+	padding-top: 55px;
+}
+
+.first-row-data {
+	padding: 20% 15% 10%;
+	text-align: center;
+}
+
+.btn-gap {
+	margin-right: 10%;
+}
+
+.other-row-data {
+	padding: 10% 2%;
+	text-align: center;
+}
+
+.btn-font-size {
+	font-size: 20px;
+	line-height: 30px;
+	color: #333!important;
+}
+
+.last-btn-gap {
+	margin-right: 4%;
+	color: #fff!important;
+}
+
+.last-row-data {
+	position: absolute;;
+	bottom: 0%;
+	left: 0%;
+	width: 100%;
+	margin-top: 20%;
+	padding: 15% 2% 18%;
+	text-align: center;
+	background-color: #aaa;
+}
+.small-word {
+	font-size: 10px;
+	display: block;
+	color: #b2b2b2;
+}
+
+.small-word-color {
+	color: #eee;
+}

@@ -29,7 +29,7 @@ db.query(`select * from running_record where rid = ${rid}`).then(res => {
     let startTime = res[0].startTime - 0;
     let endTime = res[0].endTime - 0;
     console.log([startTime, endTime]);
-    for (let i = startTime; i < endTime; i += 20) {
+    for (let i = startTime; i < endTime; i += 500) {
         let row = {
             rid: rid,
             id: 2,
