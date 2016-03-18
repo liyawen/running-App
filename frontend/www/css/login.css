@@ -12,7 +12,7 @@ div {
     height: 100%;
     width: 100%;
     background-image: url(../img/backPic.jpg);
-    background-size: 100%;
+    background-size: 100% 100%;
 }
 
 .input-label {
