@@ -1,6 +1,7 @@
 angular.module('starter.controllers')
 
-.controller('loginCtrl', function($scope, $state, $ionicPopup, Login) {
+.controller('loginCtrl', function($scope, $state, $ionicPopup, Login, commonService) {
+    commonService.confirmLogin();
     // $scope.getUserName = function () {
     //  login.getUser($scope);
     // }

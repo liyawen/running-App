@@ -7,7 +7,7 @@
     height: 37%;
     width: 100%;
     background-image: url(../img/homePic.jpg);
-    background-size: 100%;
+    background-size: 100% 100%;
 }
 
 .nav-style {
@@ -21,8 +21,9 @@
 
 .user-pic {
     position: absolute;
-    left: 37%;
+    left: 50%;
     top: 30%;
+    margin-left: -50px;
     width:100px;
     height:100px;
     border-radius: 50px;
@@ -32,17 +33,20 @@
 
 .user-nickname {
     position: absolute;
-    left: 37%;
-    top: 75%;
-    width: 100px;
+    left: 50%;
+    top: 30%;
+    margin-left: -60px;
+    margin-top: 110px;
+    width: 120px;
     color: #fff;
     font-size: 14px;
     text-align: center;
 }
 
 .home-content {
-    position: absolute;
-    top: 38%;
+    position: fixed;
+    top: 37%;
+    bottom: 5%;
     width: 100%;
     color: #fff;
     overflow: auto;
@@ -52,6 +56,11 @@
     bottom: 0;
     width: 100%;
 }
+.start-btn-sty {
+    color: #fff;
+    background-color: rgb(110,206,175);
+}
+
 .no-result-tip {
     padding: 10px 25px;
 }
@@ -59,6 +68,9 @@
 .run-record {
     background-color: rgb(36, 41, 42);
     color: #fff;
+    border-top: 0;
+    border-bottom: 3px solid #222;
+    height: 52px;
 }
 
 
