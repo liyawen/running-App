@@ -37,74 +37,30 @@
     <div class="bar bar-header header-wrapper">
         <button class="button button-icon ion-navicon nav-style" ng-click="toggleLeft()"></button>
         <div class="user-pic"></div>
-        <p class="user-nickname">Taylor Swift</p>
+        <p class="user-nickname">{{nickname}}</p>
     </div>
     <div class="home-content">
-        <p class="no-result-tip">你现在还没有跑步记录哟！快快跑起来吧！</p>
+        <!-- <p class="no-result-tip">你现在还没有跑步记录哟！快快跑起来吧！</p> -->
         <div class="list" style="overflow: auto;">
-            <a class="item run-record" href="#">
-                Check mail
+            <a class="item run-record" ng-repeat="runRecord in runRecords" href="#/runRecord/{{runRecord.rid}}">
+                {{runRecord.startTime.format('YYYY-MM-DD h:mm A')}}
                 <i class="ion-chevron-right float-right"></i>
             </a>
-
-            <a class="item run-record" href="#">
-                Call Ma
+            <!-- <div class="card" ng-repeat="runRecord in runRecords">
+              <div class="item" style="padding: 0; ">
+                <a class="item"  href="#/runRecord/{{runRecord.rid}}" style="background-color: rgb(40,51,50); color:#fff;">
+                {{runRecord.startTime.format('YYYY-MM-DD h:mm A')}}
                 <i class="ion-chevron-right float-right"></i>
-            </a>
-
-            <a class="item run-record" href="#">
-                Record album  
-                <i class="ion-chevron-right float-right"></i>
-            </a>
-            <a class="item run-record" href="#">
-                Check mail
-                <i class="ion-chevron-right float-right"></i>
-            </a>
-
-            <a class="item run-record" href="#">
-                Call Ma
-                <i class="ion-chevron-right float-right"></i>
-            </a>
-
-            <a class="item run-record" href="#">
-                Record album  
-                <i class="ion-chevron-right float-right"></i>
-            </a>
-            <a class="item run-record" href="#">
-                Check mail
-                <i class="ion-chevron-right float-right"></i>
-            </a>
-
-            <a class="item run-record" href="#">
-                Call Ma
-                <i class="ion-chevron-right float-right"></i>
-            </a>
-
-            <a class="item run-record" href="#">
-                Record album  
-                <i class="ion-chevron-right float-right"></i>
-            </a>
-            <a class="item run-record" href="#">
-                Check mail
-                <i class="ion-chevron-right float-right"></i>
-            </a>
-
-            <a class="item run-record" href="#">
-                Call Ma
-                <i class="ion-chevron-right float-right"></i>
-            </a>
-
-            <a class="item run-record" href="#">
-                Record album  
-                <i class="ion-chevron-right float-right"></i>
-            </a>
+                </a>
+              </div>
+            </div> -->
         </div>
 
  
 
     </div>
     <div class="start-btn">
-        <div class="bar bar-footer bar-calm">
+        <div class="bar bar-footer start-btn-sty">
           <div class="title">开始跑步</div>
         </div>
     </div>

@@ -25,9 +25,11 @@ UserLoginModel.prototype.login = function (req) {
     } else {
       let newPass = me.getPassword(password, res[0].salt);
       if (newPass == res[0].password) {
+        res[0].password = undefined;
+        res[0].salt = undefined;
         return {
           status: 0,
-          id: res[0].id,
+          userInfo: res[0],
           msg: '登陆成功！'
         };
       } else {

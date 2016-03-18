@@ -1,6 +1,6 @@
 angular.module('starter.services')
 
-.factory('Login', function ($http, $state, $rootScope) {
+.factory('Login', function ($http, $state, $rootScope, $cookies) {
 	return {
 
 		sendUserMsg: function (scope, ionicPopup) {
@@ -28,7 +28,8 @@ angular.module('starter.services')
 			} else {
 				$http.post('http://localhost:3000/login/', params).success(function (res) {
 					if (res.status == 0) {
-						$rootScope.userId = res.id;
+						$rootScope.userInfo = res.userInfo;
+						$cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
 						$state.go('homePage');
 					} else {
 						ionicPopup.alert({
