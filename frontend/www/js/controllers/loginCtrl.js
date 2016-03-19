@@ -18,7 +18,6 @@ angular.module('starter.controllers')
         
     }
     
-  }
   
 
 })
