@@ -1,7 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('recordCtrl', function ($scope, $ionicPopup,$stateParams, Record) {
+.controller('recordDetailCtrl', function ($scope, $ionicPopup,$stateParams, RecordDetail) {
 	// $scope.rid = $stateParams.rid;
 	// console.log($scope.rid)
-	
 })
