@@ -1,6 +1,6 @@
 angular.module('starter.services')
 
-.factory('Login', function ($http, $state, $rootScope, $cookies) {
+.factory('Login', function ($http, $state, $rootScope, $cookies, buildUrl) {
   return {
 
     sendUserMsg: function (scope, ionicPopup) {
@@ -26,11 +26,15 @@ angular.module('starter.services')
         });
         scope.password = '';
       } else {
-        $http.post('http://localhost:3000/login/', params).success(function (res) {
+        $http.post(buildUrl('/login'), params).success(function (res) {
           if (res.status == 0) {
             $rootScope.userInfo = res.userInfo;
             $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
+            scope.email = '';
+            scope.password = '';
+            scope.confirmPassword = '';
             $state.go('homePage');
+            
           } else {
             ionicPopup.alert({
                  title: res.msg
@@ -73,7 +77,7 @@ angular.module('starter.services')
         scope.password = '';
         scope.confirmPassword = '';
       } else {
-        $http.post('http://localhost:3000/userTmp/', params).success(function (res) {
+        $http.post(buildUrl('/userTmp'), params).success(function (res) {
           if (res.status == 0) {
             $rootScope.currentTid = res.tid;
             $state.go('register');
@@ -84,7 +88,7 @@ angular.module('starter.services')
           }
         })
       }
-      
+
     }
   }
 });

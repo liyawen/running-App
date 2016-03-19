@@ -38,7 +38,7 @@ UserLoginModel.prototype.login = function (req) {
           msg: '密码错误！'
         };
       }
-    }    
+    }
   }).catch(function (err) {
     return {
       status: 1,

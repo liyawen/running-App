@@ -1,9 +1,0 @@
-angular.module('starter.services')
-
-.factory('Record', function ($http, $state, $rootScope, $cookies) {
-<<<<<<< HEAD
-  return true;
-=======
-	return true;
->>>>>>> 464e633ac39f8300a08a86f60366159a8b686ef4
-})

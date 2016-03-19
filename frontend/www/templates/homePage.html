@@ -4,7 +4,7 @@
 <ion-side-menu side="left">
       <div class="list">
 
-      <a class="item item-icon-left item-icon-right" href="#">
+      <a class="item item-icon-left item-icon-right" href="#/userInfo">
         <i class="icon ion-person"></i>
         个人信息
         <i class="icon ion-ios-arrow-right"></i>
@@ -16,7 +16,7 @@
         <i class="icon ion-ios-arrow-right"></i>
       </a>
 
-      <a class="item item-icon-left item-icon-right" href="#">
+      <a class="item item-icon-left item-icon-right" href="#" ng-click="logout()">
         <i class="icon ion-android-exit"></i>
         退出登陆
         <i class="icon ion-ios-arrow-right"></i>
@@ -29,8 +29,10 @@
   <!-- Main content, usually <ion-nav-view> -->
     <div class="bar bar-header header-wrapper">
         <button class="button button-icon ion-navicon nav-style" ng-click="toggleLeft()"></button>
-        <div class="user-pic"></div>
-        <p class="user-nickname">{{nickname}}</p>
+        <a href="#/userInfo">
+          <div class="user-pic"></div>
+          <p class="user-nickname">{{nickname}}</p>
+        </a>
     </div>
     <div class="home-content">
         <!-- <p class="no-result-tip">你现在还没有跑步记录哟！快快跑起来吧！</p> -->

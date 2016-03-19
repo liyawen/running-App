@@ -1,7 +1,12 @@
 angular.module('starter.controllers')
 
-.controller('recordCtrl', function ($scope, $ionicPopup,$stateParams, Record) {
-  // $scope.rid = $stateParams.rid;
-  // console.log($scope.rid)
+.controller('userInfoCtrl', function ($scope, $rootScope, $cookies, $state, $ionicPopup, $stateParams, UserInfo) {
+  if (!$rootScope.userInfo) {
+    $rootScope.userInfo = JSON.parse($cookies.get('userInfo'));
+  }
+  $scope.backHome = function () {
+  	$state.go('homePage');
+  }
+
 	
 })

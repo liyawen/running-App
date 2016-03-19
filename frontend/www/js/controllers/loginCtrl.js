@@ -5,7 +5,9 @@ angular.module('starter.controllers')
   // $scope.getUserName = function () {
   //  login.getUser($scope);
   // }
-  
+  $scope.email = '';
+  $scope.password = '';
+  $scope.confirmPassword = '';
   $scope.sendUserMsg = function () {
     Login.sendUserMsg($scope, $ionicPopup);
   }
@@ -15,9 +17,6 @@ angular.module('starter.controllers')
   // }
   $scope.jumpRegister = function () {
     Login.jumpRegister($scope, $ionicPopup);
-        
     }
-    
-  
-
-})
+  }
+);
