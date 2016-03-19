@@ -3,55 +3,44 @@ angular.module('starter.services')
 .factory('Register', function ($http, $state ,$rootScope, $cookies) {
   var userMsg = [{
     name: '昵称',
-    code: 'nickname',
-    value: ''
+    code: 'nickname'
   }, {
     name: '性别',
-    code: 'gendle',
-    value: ''
+    code: 'gendle'
   }, {
     name: '年龄',
-    code: 'ago',
-    value: ''
+    code: 'ago'
   }, {
     name: '身高(cm)',
-    code: 'height',
-    value: ''
+    code: 'height'
   }, {
     name: '体重(kg)',
-    code: 'weight',
-    value: ''
+    code: 'weight'
   }, {
     name: '鞋码',
-    code: 'shoeSize',
-    value: ''
+    code: 'shoeSize'
   }, {
     name: '髋部高度(cm)',
-    code: 'pelvisHeight',
-    value: ''
+    code: 'pelvisHeight'
   }, {
     name: '髋部宽度(cm)',
-    code: 'pelvisWeight',
-    value: ''
+    code: 'pelvisWeight'
   }, {
     name: '膝盖高度(cm)',
-    code: 'kneeHeight',
-    value: ''
+    code: 'kneeHeight'
   }, {
     name: '膝盖宽度(cm)',
-    code: 'kneeWeight',
-    value: ''
+    code: 'kneeWeight'
   }, {
     name: '踝关节高度(cm)',
-    code: 'ankleHeight',
-    value: ''
+    code: 'ankleHeight'
   }, {
     name: '踝关节宽度(cm)',
-    code: 'ankleWeight',
-    value: ''
+    code: 'ankleWeight'
   }];
-
-JSON.stringify()
+  userMsg.forEach(function (msg) {
+    msg.value = '';
+  });
 
   return {
     all: function () {
@@ -74,7 +63,7 @@ JSON.stringify()
       userMsg.forEach(function (item) {userInfo[item.code] = item.value});
       $rootScope.userInfo = userInfo;
 
-      $http.post('http://localhost:3000/register/', params).success(function (res) {
+      $http.post(buildUrl('/register'), params).success(function (res) {
         if (res.status == 0) {
           $rootScope.userInfo.email = res.email;
           $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));

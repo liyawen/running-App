@@ -1,4 +1,4 @@
-angular.module('starter.controllers')
+angular.module('starter.services')
 
 .factory('commonService', function ($cookies, $rootScope, $state) {
   return {
@@ -6,7 +6,7 @@ angular.module('starter.controllers')
       if ($cookies.get('userInfo')) {
         $state.go('homePage');
       } else {
-        $state.go('login'); 
+        $state.go('login');
       }
     }
   }

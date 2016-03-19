@@ -1,10 +1,10 @@
 angular.module('starter.services')
 
-.factory('homePage', function ($http, $rootScope) {
+.factory('homePage', function ($http, $rootScope, buildUrl) {
   return {
     getRunRecords: function (scope, ionicPopup, callback) {
       var userId = $rootScope.userInfo.id;
-      $http.get('http://localhost:3000/getRunRecords?userId=' + userId).success(function (res) {
+      $http.get(buildUrl('/getRunRecords', {userId: userId})).success(function (res) {
         if (res.status == 0) {
           // $rootScope.runRecords = res.records;
           // return res.records;
