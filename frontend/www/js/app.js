@@ -49,6 +49,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/recordDetail/:type/:rid/',
     templateUrl: 'templates/recordDetail.html',
     controller: 'recordDetailCtrl'
+  })
+  .state('userInfo', {
+    url: '/userInfo',
+    templateUrl: 'templates/userInfo.html',
+    controller: 'userInfoCtrl'
   });
   $urlRouterProvider.otherwise('/login');
 })

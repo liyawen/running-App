@@ -30,7 +30,11 @@ angular.module('starter.services')
           if (res.status == 0) {
             $rootScope.userInfo = res.userInfo;
             $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
+            scope.email = '';
+            scope.password = '';
+            scope.confirmPassword = '';
             $state.go('homePage');
+            
           } else {
             ionicPopup.alert({
                  title: res.msg

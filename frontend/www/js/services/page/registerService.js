@@ -1,6 +1,6 @@
 angular.module('starter.services')
 
-.factory('Register', function ($http, $state ,$rootScope, $cookies) {
+.factory('Register', function ($http, $state ,$rootScope, $cookies, buildUrl) {
   var userMsg = [{
     name: '昵称',
     code: 'nickname'
@@ -67,6 +67,7 @@ angular.module('starter.services')
         if (res.status == 0) {
           $rootScope.userInfo.email = res.email;
           $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
+          scope.k = false;
           $state.go('homePage');
         } else {
           ionicPopup.alert({

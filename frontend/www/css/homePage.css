@@ -69,8 +69,18 @@
   background-color: rgb(36, 41, 42);
   color: #fff;
   border-top: 0;
+  border-right: 0; 
   border-bottom: 3px solid #222;
   height: 52px;
+}
+.item.active,
+.item.activated,
+.item-complex.active .item-content,
+.item-complex.activated .item-content,
+.item .item-content.active,
+.item .item-content.activated  {
+  border-color: transparent;
+  background-color: transparent;
 }
 
 

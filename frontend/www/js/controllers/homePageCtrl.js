@@ -15,4 +15,10 @@ angular.module('starter.controllers')
     $ionicSideMenuDelegate.toggleLeft();
   };
 
+  $scope.logout = function() {
+    $cookies.remove('userInfo');
+    $rootScope.userInfo = undefined;
+    $state.go('login');
+  }
+
 })
