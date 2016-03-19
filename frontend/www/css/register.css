@@ -1,40 +1,40 @@
 div {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .bg {
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	background-image: url(../img/backPic.jpg);
-	background-size: 100% 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/backPic.jpg);
+  background-size: 100% 100%;
 }
 
 .re-label-wrapper {
-	background-color: transparent;
-	border: 0;
-    border-bottom: 1px solid #eee;
-    height: 46px;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  height: 46px;
 }
 
 .re-span-wrapper {
-	color: #ccc;
-	width: 20%;
+  color: #ccc;
+  width: 20%;
 }
 
 .re-input-wrapper {
-	color: #ccc!important;
+  color: #ccc!important;
 }
 
 .btn-wrapper {
-    width: 70%;
-    margin: 20px auto 10px;
+  width: 70%;
+  margin: 20px auto 10px;
 }
 
 .btn-register {
-	border-radius: 45px;
-	color: #fff;
-    min-height: 45px;
-    font-size: 18px;
-    padding: 0px 39%;
+  border-radius: 45px;
+  color: #fff;
+  min-height: 45px;
+  font-size: 18px;
+  padding: 0px 39%;
 }

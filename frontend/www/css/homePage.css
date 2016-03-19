@@ -1,77 +1,74 @@
 .home-wrapper {
-    background-color: rgb(36, 41, 42);
+  background-color: rgb(36, 41, 42);
 }
 
 .header-wrapper {
-    position: fixed;
-    height: 37%;
-    width: 100%;
-    background-image: url(../img/homePic.jpg);
-    background-size: 100% 100%;
+  position: fixed;
+  height: 37%;
+  width: 100%;
+  background-image: url(../img/homePic.jpg);
+  background-size: 100% 100%;
 }
 
 .nav-style {
-    height: 20px;
-    color: #fff;
+  height: 20px;
+  color: #fff;
 }
 
 .nav-style:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .user-pic {
-    position: absolute;
-    left: 50%;
-    top: 30%;
-    margin-left: -50px;
-    width:100px;
-    height:100px;
-    border-radius: 50px;
-    background-image: url(../img/peason.jpg);
-    background-size: 100%;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  margin-left: -50px;
+  width:100px;
+  height:100px;
+  border-radius: 50px;
+  background-image: url(../img/peason.jpg);
+  background-size: 100%;
 }
 
 .user-nickname {
-    position: absolute;
-    left: 50%;
-    top: 30%;
-    margin-left: -60px;
-    margin-top: 110px;
-    width: 120px;
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  margin-left: -60px;
+  margin-top: 110px;
+  width: 120px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
 }
 
 .home-content {
-    position: fixed;
-    top: 37%;
-    bottom: 5%;
-    width: 100%;
-    color: #fff;
-    overflow: auto;
+  position: fixed;
+  top: 37%;
+  bottom: 5%;
+  width: 100%;
+  color: #fff;
+  overflow: auto;
 }
 .start-btn {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .start-btn-sty {
-    color: #fff;
-    background-color: rgb(110,206,175);
+  color: #fff;
+  background-color: rgb(110,206,175);
 }
 
 .no-result-tip {
-    padding: 10px 25px;
+  padding: 10px 25px;
 }
 
 .run-record {
-    background-color: rgb(36, 41, 42);
-    color: #fff;
-    border-top: 0;
-    border-bottom: 3px solid #222;
-    height: 52px;
+  background-color: rgb(36, 41, 42);
+  color: #fff;
+  border-top: 0;
+  border-bottom: 3px solid #222;
+  height: 52px;
 }
-
-
-
