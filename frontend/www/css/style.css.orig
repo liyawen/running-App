@@ -1,0 +1,7 @@
+.float-right {
+<<<<<<< HEAD
+  float: right;
+=======
+	float: right;
+>>>>>>> 464e633ac39f8300a08a86f60366159a8b686ef4
+}

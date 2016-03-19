@@ -1,6 +1,7 @@
 angular.module('starter.controllers')
 
 .controller('loginCtrl', function($scope, $state, $ionicPopup, Login, commonService) {
+<<<<<<< HEAD
   commonService.confirmLogin();
   // $scope.getUserName = function () {
   //  login.getUser($scope);
@@ -15,10 +16,27 @@ angular.module('starter.controllers')
   // }
   $scope.jumpRegister = function () {
     Login.jumpRegister($scope, $ionicPopup);
-        
-    }
     
   }
   
+=======
+    commonService.confirmLogin();
+    // $scope.getUserName = function () {
+    //  login.getUser($scope);
+    // }
+    
+    $scope.sendUserMsg = function () {
+        Login.sendUserMsg($scope, $ionicPopup);
+    }
+
+    // $scope.register = function () {
+    //     $scope.confirmPassword.
+    // }
+    $scope.jumpRegister = function () {
+        Login.jumpRegister($scope, $ionicPopup);
+        
+    }
+    
+>>>>>>> 464e633ac39f8300a08a86f60366159a8b686ef4
 
 })
