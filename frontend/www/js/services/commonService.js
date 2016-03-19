@@ -11,3 +11,10 @@ angular.module('starter.services')
     }
   }
 })
+.factory('loadCookie', function ($cookies, $rootScope) {
+  return function () {
+    if (!$rootScope.userInfo) {
+      $rootScope.userInfo = JSON.parse($cookies.get('userInfo'));
+    }
+  }
+})

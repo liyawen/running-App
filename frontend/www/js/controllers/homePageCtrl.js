@@ -8,9 +8,9 @@ angular.module('starter.controllers')
 
   homePage.getRunRecords($scope, $ionicPopup, function (records) {
     $scope.runRecords = records;
-    console.log(records);
   });
 
+  $ionicSideMenuDelegate.toggleLeft();
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };

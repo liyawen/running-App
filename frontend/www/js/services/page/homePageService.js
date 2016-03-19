@@ -16,10 +16,10 @@ angular.module('starter.services')
           callback(res.records);
         } else {
           ionicPopup.alert({
-               title: res.msg
-            });
+            title: res.msg
+          });
         }
       })
     }
   }
-})
+});

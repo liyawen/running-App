@@ -25,6 +25,7 @@ UserLoginModel.prototype.login = function (req) {
     } else {
       let newPass = me.getPassword(password, res[0].salt);
       if (newPass == res[0].password) {
+        res[0].token = util.sha1(res[0].salt);
         res[0].password = undefined;
         res[0].salt = undefined;
         return {

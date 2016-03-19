@@ -3,25 +3,25 @@
 let db = require('./model/db');
 
 let fields = {
-    distance: [2, 5],
-    averagePace: [1, 3],
+    distance: [0.001, 0.002],
+    averagePace: [5, 10],
     averageCadence: [0.5, 3],
-    fatigueIndex: [0.6, 1.4],
+    fatigueIndex: [0.6, 1.5],
     healthIndex: [0.6, 1.4],
     landingStrike: [0, 3, true],
     landingPronation: [0, 3, true],
     landingPronationAngle: [-20, 20],
-    impactPower: [10, 50],
-    strideLength: [20, 100],
+    impactPower: [100, 250],
+    strideLength: [100, 170],
     xCOM: [0, 10],
-    verticalMagnitude: [0, 10],
+    verticalMagnitude: [15, 20],
     energyUtilization: [0, 1],
-    runTime: [0, 20],
+    runTime: [0.1, 0.2],
     calorie: [0, 50]
 };
 
 let datas = [];
-let rid = 1;
+let rid = 11;
 let map1 = ['frontHeelStrike','midFootStrike','backHeelStrike'];
 let map2 = ['normalPronation','overPronation','underpronation'];
 
