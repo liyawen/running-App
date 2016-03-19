@@ -3,14 +3,12 @@ angular.module('starter.services')
 .factory('currentHost', function () {
   return '127.0.0.1:3000';
 })
-.factory('buildUrl', function (currentHost, $rootScope, $cookies) {
+.factory('buildUrl', function (currentHost, $rootScope, $cookies, loadCookie) {
   return function (url, params) {
     if (!params) {
       params = {};
     }
-    if (!$rootScope.userInfo) {
-      $rootScope.userInfo = JSON.parse($cookies.get('userInfo'));
-    }
+    loadCookie();
     if (!params.token && $rootScope.userInfo && $rootScope.userInfo.token) {
       params.token = $rootScope.userInfo.token;
     }
