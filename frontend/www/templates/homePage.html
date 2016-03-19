@@ -43,7 +43,7 @@
         <!-- <p class="no-result-tip">你现在还没有跑步记录哟！快快跑起来吧！</p> -->
         <div class="list" style="overflow: auto;">
             <a class="item run-record" ng-repeat="runRecord in runRecords" href="#/runRecord/{{runRecord.rid}}">
-                {{runRecord.startTime.format('YYYY-MM-DD h:mm A')}}
+                {{runRecord.startTime.format('LL h:mm A')}}
                 <i class="ion-chevron-right float-right"></i>
             </a>
             <!-- <div class="card" ng-repeat="runRecord in runRecords">
