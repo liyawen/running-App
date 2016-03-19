@@ -1,8 +1,15 @@
 angular.module('starter.controllers')
 
 .controller('registerCtrl', function ($scope, $ionicPopup, Register) {
+<<<<<<< HEAD
   $scope.userMsg = Register.all();
   $scope.getAllMsg = function () {
     Register.getAllMsg($scope, $ionicPopup);
   }
+=======
+	$scope.userMsg = Register.all();
+	$scope.getAllMsg = function () {
+		Register.getAllMsg($scope, $ionicPopup);
+	}
+>>>>>>> 464e633ac39f8300a08a86f60366159a8b686ef4
 })
