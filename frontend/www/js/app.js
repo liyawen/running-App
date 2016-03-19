@@ -33,7 +33,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   .state('register', {
     url: '/register',
     templateUrl: '/templates/register.html',
-    controller: 'registerCtrl' 
+    controller: 'registerCtrl'
   })
   .state('homePage', {
     url: '/homePage',
@@ -46,7 +46,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     controller: 'recordCtrl'
   })
   .state('recordDetail', {
-    url: '/recordDetail/:rid/',
+    url: '/recordDetail/:type/:rid/',
     templateUrl: 'templates/recordDetail.html',
     controller: 'recordDetailCtrl'
   });

@@ -7,39 +7,39 @@
     </div>
     <div class="data-msg">
       <div class="first-row-data">
-        <button class="button button-clear button-stable btn-gap btn-font-size">
+        <button ng-click="gotoChart('fatigueIndex')" class="button button-clear button-stable btn-gap btn-font-size">
           {{detail.fatigueIndex}}
           <label class="small-word">疲劳指数</label>
         </button>
-        <button class="button button-clear button-stable btn-font-size">
+        <button ng-click="gotoChart('healthIndex')" class="button button-clear button-stable btn-font-size">
           {{detail.healthIndex}}
           <label class="small-word">健康指数</label>
         </button>
       </div>
       <div class="other-row-data">
-        <button class="button button-clear button-stable btn-gap btn-font-size">
+        <button ng-click="gotoChart('landingStrike')" class="button button-clear button-stable btn-gap btn-font-size">
           {{detail.landingStrike}}
           <label class="small-word">落地姿态</label>
         </button>
-        <button class="button button-clear button-stable btn-gap btn-font-size">
+        <button ng-click="gotoChart('landingPronationAngle')" class="button button-clear button-stable btn-gap btn-font-size">
           {{detail.landingPronationAngle}}<span class="small-unit">度</span>
           <label class="small-word">落地内旋</label>
         </button>
-        <button class="button button-clear button-stable btn-font-size">
+        <button ng-click="gotoChart('impactPower')" class="button button-clear button-stable btn-font-size">
           {{detail.impactPower}}<span class="small-unit">G</span>
           <label class="small-word">落地冲量</label>
         </button>
       </div>
       <div class="other-row-data">
-        <button class="button button-clear button-stable btn-gap btn-font-size">
+        <button ng-click="gotoChart('strideLength')" class="button button-clear button-stable btn-gap btn-font-size">
           {{detail.strideLength}}<span class="small-unit">cm</span>
           <label class="small-word">步幅</label>
         </button>
-        <button class="button button-clear button-stable btn-gap btn-font-size">
+        <button ng-click="gotoChart('xCOM')" class="button button-clear button-stable btn-gap btn-font-size">
           {{detail.xCOM}}<span class="small-unit">mm</span>
           <label class="small-word">xCOM</label>
         </button>
-        <button class="button button-clear button-stable btn-font-size">
+        <button ng-click="gotoChart('verticalMagnitude')" class="button button-clear button-stable btn-font-size">
           {{detail.verticalMagnitude}}<span class="small-unit">mm</span>
           <label class="small-word">垂直运动幅度</label>
         </button>
@@ -48,19 +48,19 @@
     </div>
 
     <div class="last-row-data">
-        <button class="button button-clear button-stable last-btn-gap btn-font-size">
+        <button ng-click="gotoChart('averageCadence')" class="button button-clear button-stable last-btn-gap btn-font-size">
           {{detail.averageCadence}}<span class="small-unit">/min</span>
           <label class="small-word small-word-color">步频</label>
         </button>
-        <button class="button button-clear button-stable last-btn-gap btn-font-size">
+        <button ng-click="gotoChart('averagePace')" class="button button-clear button-stable last-btn-gap btn-font-size">
           {{detail.averagePace}}<span class="small-unit">km/h</span>
           <label class="small-word small-word-color">平均速度</label>
         </button>
-        <button class="button button-clear button-stable last-btn-gap btn-font-size">
+        <button ng-click="gotoChart('distance')" class="button button-clear button-stable last-btn-gap btn-font-size">
           {{detail.distance}}<span class="small-unit">km</span>
           <label class="small-word small-word-color">里程</label>
         </button>
-        <button class="button button-clear button-stable btn-font-size" style="color: #fff!important;">
+        <button ng-click="gotoChart('runTime')" class="button button-clear button-stable btn-font-size" style="color: #fff!important;">
           {{detail.runTime}}<span class="small-unit">min</span>
           <label class="small-word small-word-color">运动时长</label>
         </button>
