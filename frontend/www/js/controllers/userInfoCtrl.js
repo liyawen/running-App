@@ -10,10 +10,11 @@ angular.module('starter.controllers')
 
   $scope.backHome = function () {
     $state.go('homePage');
+    $scope.nickname = $rootScope.userInfo.nickname;
   }
 
   $scope.show = function(x) {
     UserInfo.show(x, $scope, $ionicPopup);
   };
-  
+
 })
