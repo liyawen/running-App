@@ -21,11 +21,14 @@ let fields = {
 };
 
 let datas = [];
-let rid = 11;
+let rid = 6;
 let map1 = ['frontHeelStrike','midFootStrike','backHeelStrike'];
 let map2 = ['normalPronation','overPronation','underpronation'];
 
 db.query(`select * from running_record where rid = ${rid}`).then(res => {
+    if (res.length < 1) {
+        throw new Error('no data');
+    }
     let startTime = res[0].startTime - 0;
     let endTime = res[0].endTime - 0;
     console.log([startTime, endTime]);

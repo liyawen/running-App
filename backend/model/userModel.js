@@ -171,4 +171,35 @@ class UserModel {
   }
 }
 
+UserModel.prototype.modifyUserInfo = function (req) {
+  let me = this;
+  let code = req.query.code;
+  let value = req.query.value;
+  let id = req.id;
+
+  return db.query(`update user set ${code} = '${value}' where id = '${id}'`).then(function (res) {
+    console.log(res);
+    if (res.affectedRows <= 0) {
+      return new Error('插入失败！');
+    } else {
+      return db.query(`select * from user where id = '${id}'`)
+    }
+  }).then(function (res) {
+    res[0].token = util.sha1(res[0].salt);
+    res[0].salt = undefined;
+    res[0].password = undefined;
+    return {
+      status: 0,
+      userInfo: res[0],
+      msg: '修改成功！'
+    };
+  }).catch(function (err) {
+    return {
+      status: 1,
+      msg: err.message,
+      sql: err.sql
+    };
+  });
+}
+
 module.exports = UserModel;
