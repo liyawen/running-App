@@ -6,9 +6,6 @@ angular.module('starter.services')
       var userId = $rootScope.userInfo.id;
       $http.get(buildUrl('/getRunRecords', {userId: userId})).success(function (res) {
         if (res.status == 0) {
-          // $rootScope.runRecords = res.records;
-          // return res.records;
-          // console.log(res);
           res.records.forEach(function (item) {
             item.startTime = moment(new Date(item.startTime));
             item.endTime = moment(new Date(item.endTime));
@@ -23,3 +20,4 @@ angular.module('starter.services')
     }
   }
 });
+

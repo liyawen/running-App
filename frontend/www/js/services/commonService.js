@@ -21,3 +21,8 @@ angular.module('starter.services')
     }
   }
 })
+.factory('back', function ($window) {
+  return function () {
+    $window.history.back();
+  };
+})

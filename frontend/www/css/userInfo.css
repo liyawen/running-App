@@ -1,12 +1,12 @@
 .header-color {
-	background-color: #19AED0;
-	color: #fff;
+  background-color: #19AED0;
+  color: #fff;
 }
 
 .pic-space {
-	margin-top: 45px;
-	height: 35%;
-	width: 100%
+  margin-top: 45px;
+  height: 35%;
+  width: 100%
 }
 
 .user-pic {
@@ -42,13 +42,13 @@
   width: 26px;
   height: 26px;
   border-radius:13px;
-  background-color: #0FAACE;  
+  background-color: #0FAACE;
 }
 
 .camera-place {
   position: absolute;
   margin: 2px 6px;
-	color: #fff;
+  color: #fff;
   font-size: 19px;
 }
 

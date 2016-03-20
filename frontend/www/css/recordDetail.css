@@ -1,0 +1,21 @@
+.record-content {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #313234;
+}
+
+.big-bar {
+  height: 55px;
+  background-color: #56CC9B;
+}
+
+#big-word {
+  height: 55px;
+  line-height: 55px;
+  font-size: 20px;
+  color: #fff;
+}
+

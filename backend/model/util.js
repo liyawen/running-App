@@ -1,6 +1,6 @@
 'use strict';
 
-let crypto = require('crypto');
+const crypto = require('crypto');
 
 function sha1(value) {
   let sha1 = crypto.createHash('sha1');
