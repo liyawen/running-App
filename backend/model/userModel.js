@@ -170,7 +170,7 @@ class UserModel {
     });
   }
 
-  modifyUserInfo = function (req) {
+  modifyUserInfo(req) {
     let me = this;
     let code = req.query.code;
     let value = req.query.value;
