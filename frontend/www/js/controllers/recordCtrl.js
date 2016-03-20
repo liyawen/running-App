@@ -7,6 +7,9 @@ angular.module('starter.controllers')
   });
 
   $scope.gotoChart = function (type) {
-    console.log(type);
+    $state.go('recordDetail', {
+      type: type,
+      rid: rid
+    });
   }
 });

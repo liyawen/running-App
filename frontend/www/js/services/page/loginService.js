@@ -34,7 +34,7 @@ angular.module('starter.services')
             scope.password = '';
             scope.confirmPassword = '';
             $state.go('homePage');
-            
+
           } else {
             ionicPopup.alert({
                  title: res.msg
@@ -77,7 +77,7 @@ angular.module('starter.services')
         scope.password = '';
         scope.confirmPassword = '';
       } else {
-        $http.post(buildUrl('/userTmp'), params).success(function (res) {
+        $http.post(buildUrl('/cacheUser'), params).success(function (res) {
           if (res.status == 0) {
             $rootScope.currentTid = res.tid;
             $state.go('register');
