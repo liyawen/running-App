@@ -62,7 +62,8 @@ class RecordModel {
         'landingPronation'
       ];
       return Promise.all([
-        db.query(`select ${fields.join(',')} from receive_data where rid = ${rid}`)
+        db.query(`select startTime, endTime from running_record where rid = ${rid}`),
+        db.query(`select ${fields.join(',')} from receive_data where rid = ${rid}`),
       ].concat(commonFields.map(field => {
         return db.query(`select ${field} from receive_data group by ${field} order by count(1) desc limit 1`);
       })));

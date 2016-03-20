@@ -32,6 +32,15 @@ angular.module('starter.services')
             res[key] = format[key][res[key]];
           }
         });
+
+        res.startTime = moment(res.startTime);
+        res.endTime = moment(res.endTime);
+        if (res.startTime.date() === res.endTime.date()) {
+          res.showTime = res.startTime.format('MMM DD  h:m a') + ' - ' + res.endTime.format('h:m a');
+        } else {
+          res.showTime = res.startTime.format('MMM DD  h:m a') + ' - ' + res.endTime.format('MMM DD  h:m a');
+        }
+
         callback(res);
       });
     }
