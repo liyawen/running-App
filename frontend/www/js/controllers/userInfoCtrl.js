@@ -1,12 +1,17 @@
 angular.module('starter.controllers')
 
-.controller('userInfoCtrl', function ($scope, $rootScope, $cookies, $state, $ionicPopup, $stateParams, UserInfo) {
+.controller('userInfoCtrl', function ($scope, $rootScope, $cookies, $ionicActionSheet, $timeout, $state, $ionicPopup, $stateParams, UserInfo) {
   if (!$rootScope.userInfo) {
     $rootScope.userInfo = JSON.parse($cookies.get('userInfo'));
   }
+  $scope.userArray = UserInfo.getMsg();
+
   $scope.backHome = function () {
-  	$state.go('homePage');
+    $state.go('homePage');
   }
 
-	
+  $scope.show = function(x) {
+    UserInfo.show(x, $scope, $ionicPopup);
+  };
+  
 })

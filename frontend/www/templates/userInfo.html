@@ -14,26 +14,10 @@
   </a>
 </div>
 <div class="list user-msg-wrapper">
-  <a class="item item-icon-right msg-input-wrapper" href="#">
-    <span class="msg-tip">个人信息</span>
+  <a class="item item-icon-right msg-input-wrapper" ng-click="show(x)" ng-repeat="x in userArray" href="#">
+    <span class="msg-tip">{{x.name}}</span>
     <div class="icon msg-word">
-      <span class="msg-word-span">liyawen</span>
-      <i class="ion-ios-arrow-right"></i>
-    </div>
-  </a>
-
-  <a class="item item-icon-right msg-input-wrapper" href="#">
-    <span class="msg-tip">个人信息</span>
-    <div class="icon msg-word">
-      <span class="msg-word-span">liyawen</span>
-      <i class="ion-ios-arrow-right"></i>
-    </div>
-  </a>
-
-  <a class="item item-icon-right msg-input-wrapper" href="#">
-    <span class="msg-tip">个人信息</span>
-    <div class="icon msg-word">
-      <span class="msg-word-span">liyawen</span>
+      <span class="msg-word-span">{{x.value}}</span>
       <i class="ion-ios-arrow-right"></i>
     </div>
   </a>

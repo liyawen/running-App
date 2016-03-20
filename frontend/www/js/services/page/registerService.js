@@ -9,7 +9,7 @@ angular.module('starter.services')
     code: 'gendle'
   }, {
     name: '年龄',
-    code: 'ago'
+    code: 'age'
   }, {
     name: '身高(cm)',
     code: 'height'
@@ -24,19 +24,19 @@ angular.module('starter.services')
     code: 'pelvisHeight'
   }, {
     name: '髋部宽度(cm)',
-    code: 'pelvisWeight'
+    code: 'pelvisWidth'
   }, {
     name: '膝盖高度(cm)',
     code: 'kneeHeight'
   }, {
     name: '膝盖宽度(cm)',
-    code: 'kneeWeight'
+    code: 'kneeWidth'
   }, {
     name: '踝关节高度(cm)',
     code: 'ankleHeight'
   }, {
     name: '踝关节宽度(cm)',
-    code: 'ankleWeight'
+    code: 'ankleWidth'
   }];
   userMsg.forEach(function (msg) {
     msg.value = '';

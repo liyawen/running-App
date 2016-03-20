@@ -55,6 +55,8 @@
 .user-msg-wrapper {
   width: 80%;
   margin: 0 auto;
+  overflow: auto;
+  height: 50%;
 }
 
 .msg-input-wrapper {

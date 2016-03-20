@@ -16,7 +16,6 @@ function access(req, res) {
     }
     req.id = res[0].id;
   }).catch(e => {
-    console.log('message 4');
     let result = {
       status: 1,
       msg: e.message,

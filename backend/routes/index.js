@@ -52,4 +52,13 @@ router.get('/getRunDetail', function (req, res, next) {
   });
 });
 
+router.get('/modifyUserInfo', function (req, res, next) {
+  auth.access(req, res).then(() => {
+    let model = new UserModel();
+    model.modifyUserInfo(req).then(function (result) {
+      res.send(JSON.stringify(result));
+    }); 
+  });
+});
+
 module.exports = router;
