@@ -21,4 +21,7 @@ angular.module('starter.controllers')
     $state.go('login');
   }
 
+  $scope.startRun = function () {
+    $state.go('running');
+  }
 })
