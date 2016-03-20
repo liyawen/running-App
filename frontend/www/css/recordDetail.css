@@ -19,3 +19,8 @@
   color: #fff;
 }
 
+.chart-area {
+  position: fixed;
+  top: 35%;
+  height: 30%;
+}
