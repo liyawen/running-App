@@ -1,7 +1,7 @@
 'use strict';
 
 let mysql = require('mysql');
-let config = require('../config/db');
+let config = require('../config/mysql');
 let connection = mysql.createConnection(config);
 
 connection.connect();
