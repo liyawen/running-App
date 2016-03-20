@@ -54,6 +54,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/userInfo',
     templateUrl: 'templates/userInfo.html',
     controller: 'userInfoCtrl'
+  })
+  .state('running', {
+    url: 'running',
+    templateUrl: 'templates/running.html',
+    controller: 'runningCtrl'
   });
   $urlRouterProvider.otherwise('/login');
 })
