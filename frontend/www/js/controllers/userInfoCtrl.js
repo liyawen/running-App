@@ -4,6 +4,8 @@ angular.module('starter.controllers')
   if (!$rootScope.userInfo) {
     $rootScope.userInfo = JSON.parse($cookies.get('userInfo'));
   }
+
+  $scope.email = $rootScope.userInfo.email;
   $scope.userArray = UserInfo.getMsg();
 
   $scope.backHome = function () {
