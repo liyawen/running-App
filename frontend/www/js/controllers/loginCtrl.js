@@ -8,6 +8,9 @@ angular.module('starter.controllers')
   $scope.email = '';
   $scope.password = '';
   $scope.confirmPassword = '';
+  $scope.goResetPassword = function () {
+    $state.go('resetPassword');
+  }
   $scope.sendUserMsg = function () {
     Login.sendUserMsg($scope, $ionicPopup);
   }

@@ -64,6 +64,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/hardwareConnect',
     templateUrl: 'templates/hardwareConnect.html',
     controller: 'hardwareConnectCtrl'
+  })
+  .state('resetPassword', {
+    url: 'resetPassword',
+    templateUrl: 'templates/resetPassword.html',
+    controller: 'resetPasswordCtrl'
   });
   $urlRouterProvider.otherwise('/login');
 });
