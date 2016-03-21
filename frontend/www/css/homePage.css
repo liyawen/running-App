@@ -14,7 +14,7 @@
   height: 20px;
   color: #fff;
   position: fixed;
-  top: 10px;
+  top: 0;
   left: 10px;
   z-index: 100;
   font-size: 27px;
@@ -63,7 +63,7 @@
 }
 .start-btn-sty {
   color: #fff;
-  background-color: rgb(110,206,175);
+  background-color: #44CCDA;
 }
 
 .no-result-tip {

@@ -59,6 +59,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: 'running',
     templateUrl: 'templates/running.html',
     controller: 'runningCtrl'
+  })
+  .state('hardwareConnect', {
+    url: '/hardwareConnect',
+    templateUrl: 'templates/hardwareConnect.html',
+    controller: 'hardwareConnectCtrl'
   });
   $urlRouterProvider.otherwise('/login');
 });

@@ -1,0 +1,18 @@
+<link href="css/hardwareConnect.css" rel="stylesheet">
+
+<div class="bar bar-header run-big-bar">
+  <a class="button button-icon icon ion-ios-arrow-back" style="color:#fff;" ng-click="goback()"></a>
+  <div class="h1 title" id="run-big-word">硬件设备连接</div>
+</div>
+
+<div class="connect-wrapper" ng-click="tryConnect()">
+  <p class="connet-word">开始连接</p>
+  <p class="connect-tip">请将设备贴近手机</p>
+</div>
+
+<div class="connecting" ng-hide="g">
+  <i class="icon ion-loop reflash"></i>
+  <span>
+    连接硬件蓝牙中...
+  </span>  
+</div>

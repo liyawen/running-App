@@ -1,69 +1,57 @@
-<link rel="stylesheet" href="css/record.css">
+<link rel="stylesheet" href="css/running.css">
 
-  <div class="record-content">
-    <div class="bar bar-header big-bar">
-      <a class="button button-icon icon ion-ios-home" style="color:#fff;" href="#/homePage"></a>
-      <div class="h1 title" id="big-word">27 FEB</div>
-    </div>
-    <div class="data-msg">
-      <div class="first-row-data">
-        <button ng-click="gotoChart('fatigueIndex')" class="button button-clear button-stable btn-gap btn-font-size">
-          {{detail.fatigueIndex}}
-          <label class="small-word">疲劳指数</label>
-        </button>
-        <button ng-click="gotoChart('healthIndex')" class="button button-clear button-stable btn-font-size">
-          {{detail.healthIndex}}
-          <label class="small-word">健康指数</label>
-        </button>
-      </div>
-      <div class="other-row-data">
-        <button ng-click="gotoChart('landingStrike')" class="button button-clear button-stable btn-gap btn-font-size">
-          {{detail.landingStrike}}
-          <label class="small-word">落地姿态</label>
-        </button>
-        <button ng-click="gotoChart('landingPronationAngle')" class="button button-clear button-stable btn-gap btn-font-size">
-          {{detail.landingPronationAngle}}<span class="small-unit">度</span>
-          <label class="small-word">落地内旋</label>
-        </button>
-        <button ng-click="gotoChart('impactPower')" class="button button-clear button-stable btn-font-size">
-          {{detail.impactPower}}<span class="small-unit">G</span>
-          <label class="small-word">落地冲量</label>
-        </button>
-      </div>
-      <div class="other-row-data">
-        <button ng-click="gotoChart('strideLength')" class="button button-clear button-stable btn-gap btn-font-size">
-          {{detail.strideLength}}<span class="small-unit">cm</span>
-          <label class="small-word">步幅</label>
-        </button>
-        <button ng-click="gotoChart('xCOM')" class="button button-clear button-stable btn-gap btn-font-size">
-          {{detail.xCOM}}<span class="small-unit">mm</span>
-          <label class="small-word">xCOM</label>
-        </button>
-        <button ng-click="gotoChart('verticalMagnitude')" class="button button-clear button-stable btn-font-size">
-          {{detail.verticalMagnitude}}<span class="small-unit">mm</span>
-          <label class="small-word">垂直运动幅度</label>
-        </button>
-      </div>
-
+  <div class="running-content">
+    <div class="bar bar-header run-big-bar">
+      <a class="button button-icon icon ion-ios-arrow-back" style="color:#fff;" ng-click="goback()"></a>
+      <div class="h1 title" id="run-big-word">STEPP</div>
     </div>
 
-    <div class="last-row-data">
-        <button ng-click="gotoChart('averageCadence')" class="button button-clear button-stable last-btn-gap btn-font-size">
-          {{detail.averageCadence}}<span class="small-unit">/min</span>
-          <label class="small-word small-word-color">步频</label>
-        </button>
-        <button ng-click="gotoChart('averagePace')" class="button button-clear button-stable last-btn-gap btn-font-size">
-          {{detail.averagePace}}<span class="small-unit">km/h</span>
-          <label class="small-word small-word-color">平均速度</label>
-        </button>
-        <button ng-click="gotoChart('distance')" class="button button-clear button-stable last-btn-gap btn-font-size">
-          {{detail.distance}}<span class="small-unit">km</span>
-          <label class="small-word small-word-color">里程</label>
-        </button>
-        <button ng-click="gotoChart('runTime')" class="button button-clear button-stable btn-font-size" style="color: #fff!important;">
-          {{detail.runTime}}<span class="small-unit">min</span>
-          <label class="small-word small-word-color">运动时长</label>
-        </button>
+    <div class="row-data">
+      <div class="button button-clear button-stable btn-gap">
+        180<span class="run-small-unit">/min</span>
+        <label class="run-small-word">步频</label>
       </div>
+      <div class="button button-clear button-stable btn-gap">
+       7.2<span class="run-small-unit">km/h</span>
+        <label class="run-small-word">平均速度</label>
+      </div>
+      <div class="button button-clear button-stable btn-gap">
+        5.3<span class="run-small-unit">km</span>
+        <label class="run-small-word">里程</label>
+      </div>
+      <div class="button button-clear button-stable btn-gap" style="margin-right:0;">
+        200<span class="run-small-unit">min</span>
+        <label class="run-small-word">运动时长</label>
+      </div>
+    </div>
+    
+    <div class="circle-wrapper">
+      <div class="inside-circle">
+        <div class="button button-clear button-stable btn-gap circle-btn">
+          73%
+          <label class="run-small-word">疲劳指数</label>
+        </div>
+        <div class="button button-clear button-stable btn-gap circle-btn">
+          23%
+          <label class="run-small-word">Last 5 min</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="alone-word">
+      <div class="button button-clear button-stable btn-gap circle-btn">
+          83%
+          <label class="run-small-word">健康指数</label>
+        </div>
+    </div>
+
+    <div class="run-status">
+      <button class="button button-positive run-status-btn">
+        START
+      </button>
+    </div>
+
   </div>
+
+  
 

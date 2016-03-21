@@ -2,60 +2,51 @@
 <ion-side-menus>
   <!-- Left menu -->
 <ion-side-menu side="left">
-      <div class="list">
-
-      <a class="item item-icon-left item-icon-right" href="#/userInfo">
-        <i class="icon ion-person"></i>
+  <div class="list">
+    <a class="item item-icon-left item-icon-right" href="#/userInfo">
+      <i class="icon ion-person"></i>
         个人信息
-        <i class="icon ion-ios-arrow-right"></i>
-      </a>
+      <i class="icon ion-ios-arrow-right"></i>
+    </a>
 
-      <a class="item item-icon-left item-icon-right" href="#">
-        <i class="icon ion-usb"></i>
+    <a class="item item-icon-left item-icon-right" href="#/hardwareConnect">
+      <i class="icon ion-usb"></i>
         设备连接
-        <i class="icon ion-ios-arrow-right"></i>
-      </a>
+      <i class="icon ion-ios-arrow-right"></i>
+    </a>
 
-      <a class="item item-icon-left item-icon-right" href="#" ng-click="logout()">
-        <i class="icon ion-android-exit"></i>
+    <a class="item item-icon-left item-icon-right" href="#" ng-click="logout()">
+      <i class="icon ion-android-exit"></i>
         退出登陆
-        <i class="icon ion-ios-arrow-right"></i>
-      </a>
+      <i class="icon ion-ios-arrow-right"></i>
+    </a>
 
-    </div>
+  </div>
 </ion-side-menu>
 
 <ion-side-menu-content class="home-wrapper">
   <!-- Main content, usually <ion-nav-view> -->
-    <button class="button button-icon ion-navicon nav-style" ng-click="toggleLeft()"></button>
-    <div class="bar bar-header header-wrapper">
-        <a href="#/userInfo">
-          <div class="user-pic"></div>
-          <p class="user-nickname">{{nickname}}</p>
-        </a>
+  <button class="button button-icon ion-navicon nav-style" ng-click="toggleLeft()"></button>
+  <div class="bar bar-header header-wrapper">
+    <a href="#/userInfo">
+      <div class="user-pic"></div>
+      <p class="user-nickname">{{nickname}}</p>
+      </a>
+  </div>
+  <div class="home-content">
+    <!-- <p class="no-result-tip">你现在还没有跑步记录哟！快快跑起来吧！</p> -->
+    <div class="list" style="overflow: auto;">
+      <a class="item run-record" ng-repeat="runRecord in runRecords" href="#/runRecord/{{runRecord.rid}}">
+        {{runRecord.startTime.format('ll h:mm A')}}
+        <i class="ion-chevron-right float-right"></i>
+      </a>
     </div>
-    <div class="home-content">
-        <!-- <p class="no-result-tip">你现在还没有跑步记录哟！快快跑起来吧！</p> -->
-        <div class="list" style="overflow: auto;">
-            <a class="item run-record" ng-repeat="runRecord in runRecords" href="#/runRecord/{{runRecord.rid}}">
-                {{runRecord.startTime.format('ll h:mm A')}}
-                <i class="ion-chevron-right float-right"></i>
-            </a>
-            <!-- <div class="card" ng-repeat="runRecord in runRecords">
-              <div class="item" style="padding: 0; ">
-                <a class="item"  href="#/runRecord/{{runRecord.rid}}" style="background-color: rgb(40,51,50); color:#fff;">
-                {{runRecord.startTime.format('YYYY-MM-DD h:mm A')}}
-                <i class="ion-chevron-right float-right"></i>
-                </a>
-              </div>
-            </div> -->
-        </div>
+  </div>
+  <div class="start-btn" ng-click="startRun()">
+    <div class="bar bar-footer start-btn-sty">
+      <div class="title">开始跑步</div>
     </div>
-    <div class="start-btn" ng-click="startRun()">
-        <div class="bar bar-footer start-btn-sty">
-          <div class="title">开始跑步</div>
-        </div>
-    </div>
+  </div>
 </ion-side-menu-content>
 </ion-side-menus>
 

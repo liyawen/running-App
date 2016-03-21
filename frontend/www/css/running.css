@@ -1,4 +1,4 @@
-.record-content {
+.running-content {
   position: fixed;
   top:0;
   left: 0;
@@ -7,67 +7,106 @@
   background-color: #313234;
 }
 
-.big-bar {
+.run-big-bar {
   height: 55px;
-  background-color: #56CC9B;
+  background-color: #4e8ef7;
 }
 
-#big-word {
+#run-big-word {
   height: 55px;
   line-height: 55px;
   font-size: 20px;
   color: #fff;
 }
 
-.data-msg {
-  position: relative;
-  padding-top: 55px;
-}
-
-.first-row-data {
-  padding: 20% 15% 10%;
+.row-data {
+  position: absolute;;
+  left: 0%;
+  width: 100%;
+  margin-top: 55px;
+  padding: 15% 2% 18%;
   text-align: center;
 }
 
 .btn-gap {
-  margin-right: 10%;
-}
-
-.other-row-data {
-  padding: 10% 2%;
-  text-align: center;
-}
-
-.btn-font-size {
+  margin-right: 2%;
   font-size: 20px;
   line-height: 30px;
   color: #fff!important;
 }
 
-.last-btn-gap {
-  margin-right: 4%;
-  color: #fff!important;
-}
 
-.last-row-data {
-  position: absolute;;
-  bottom: 0%;
-  left: 0%;
-  width: 100%;
-  margin-top: 20%;
-  padding: 15% 2% 18%;
-  text-align: center;
-  background-color: #308066;
-}
-.small-word {
-  font-size: 10px;
-  display: block;
-  color: #b2b2b2;
-}
-
-.small-word-color {
-  color: #eee;
-}
-.small-unit {
+.run-small-unit {
   font-size: 8px;
 }
+
+.run-small-word {
+  font-size: 10px;
+  display: block;
+  color: #BDD3DA;
+}
+
+
+.circle-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -115px;
+  margin-left: -115px;
+  width: 230px;
+  height: 230px;
+  display: block;
+  border-radius: 115px;
+  border: 1px solid #fff;
+}
+
+.inside-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  width: 200px;
+  height: 200px;
+  display: block;
+  border-radius: 100px;
+  border: 3px solid #fff;
+  padding: 35px;
+  background-color: #399FDA;
+}
+
+.circle-btn {
+  display: block;
+  margin: 5px 5px 15px;
+}
+
+.alone-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 130px;
+  margin-left: -50px;
+  width: 100px;
+  display: block;
+}
+
+.run-status {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  margin-left: -110px;
+  width: 220px;
+  display: block;
+}
+
+.run-status-btn {
+  padding: 0px 85px;
+  border-radius: 25px;
+}
+
+
+
+
+
+
+

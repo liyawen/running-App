@@ -73,8 +73,6 @@ angular.module('starter.services')
                     title: '修改失败' + res.msg
                   });
                 } else {
-                  // $rootScope.userInfo = res.userInfo;
-                  
                   $rootScope.userInfo = res.userInfo;
                   $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
                   scope.userArray = me.getMsg();
@@ -86,9 +84,7 @@ angular.module('starter.services')
           }
         }]
       });
-      $timeout(function() {
-        myPopup.close(); 
-      }, 20000);
+      
     }
   }
 })
