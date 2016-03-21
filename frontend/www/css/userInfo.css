@@ -9,7 +9,7 @@
   width: 100%
 }
 
-.user-pic {
+.user-pic-info {
   position: absolute;
   left: 50%;
   top: 15%;
@@ -21,7 +21,7 @@
   background-size: 100%;
 }
 
-.user-nickname {
+.user-nickname-info {
   position: absolute;
   left: 50%;
   top: 15%;

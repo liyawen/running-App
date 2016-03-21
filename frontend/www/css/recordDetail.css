@@ -21,6 +21,9 @@
 
 .chart-area {
   position: fixed;
+  padding: 0 5%;
+  box-sizing: border-box;
+  width: 100%;
   top: 35%;
   height: 30%;
 }

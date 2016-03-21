@@ -4,7 +4,7 @@ const util = require('./util');
 const db = require('./db');
 
 class UserModel {
-  geneartePass(oriPass) {
+  generatePass(oriPass) {
     let salt = util.sha1((+new Date()).toString());
     let newPass = this.getPass(oriPass, salt);
     return {

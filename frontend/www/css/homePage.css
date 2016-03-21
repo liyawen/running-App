@@ -13,6 +13,11 @@
 .nav-style {
   height: 20px;
   color: #fff;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  font-size: 27px;
 }
 
 .nav-style:hover {
@@ -69,7 +74,7 @@
   background-color: rgb(36, 41, 42);
   color: #fff;
   border-top: 0;
-  border-right: 0; 
+  border-right: 0;
   border-bottom: 3px solid #222;
   height: 52px;
 }

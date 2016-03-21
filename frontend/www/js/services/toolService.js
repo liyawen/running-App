@@ -1,8 +1,10 @@
 angular.module('starter.services')
 
 .factory('currentHost', function () {
-  return '192.168.0.112:3000';
+//   return '192.168.0.112:3000';
   // return '127.0.0.1:3000';
+  return '115.28.105.173:3000';
+//   return '192.168.0.101:3000';
 })
 .factory('buildUrl', function (currentHost, $rootScope, $cookies, loadCookie) {
   return function (url, params) {
