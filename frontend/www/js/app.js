@@ -27,22 +27,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   $stateProvider
   .state('login', {
     url: '/login',
-    templateUrl: '/templates/login.html',
+    templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
   })
   .state('register', {
     url: '/register',
-    templateUrl: '/templates/register.html',
+    templateUrl: 'templates/register.html',
     controller: 'registerCtrl'
   })
   .state('homePage', {
     url: '/homePage',
-    templateUrl: '/templates/homePage.html',
+    templateUrl: 'templates/homePage.html',
     controller: 'homePageCtrl'
   })
   .state('record', {
     url: '/runRecord/:rid',
-    templateUrl: '/templates/record.html',
+    templateUrl: 'templates/record.html',
     controller: 'recordCtrl'
   })
   .state('recordDetail', {
