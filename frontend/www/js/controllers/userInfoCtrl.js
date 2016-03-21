@@ -9,8 +9,8 @@ angular.module('starter.controllers')
   $scope.userArray = UserInfo.getMsg();
 
   $scope.backHome = function () {
-    $state.go('homePage');
     $scope.nickname = $rootScope.userInfo.nickname;
+    $state.go('homePage');
   }
 
   $scope.show = function(x) {

@@ -1,10 +1,13 @@
 angular.module('starter.controllers')
 
-.controller('homePageCtrl', function($scope, $state, $ionicPopup, $cookies, $rootScope, $ionicSideMenuDelegate, homePage) {
+.controller('homePageCtrl', function($scope, $state, $ionicPopup, $cookies, $rootScope, $timeout, $ionicSideMenuDelegate, homePage) {
   if (!$rootScope.userInfo) {
     $rootScope.userInfo = JSON.parse($cookies.get('userInfo'));
   }
   $scope.nickname = $rootScope.userInfo.nickname;
+  $scope.$on('$ionicView.beforeEnter', function () {
+    $scope.nickname = $rootScope.userInfo.nickname;
+  })
 
   homePage.getRunRecords($scope, $ionicPopup, function (records) {
     $scope.runRecords = records;
