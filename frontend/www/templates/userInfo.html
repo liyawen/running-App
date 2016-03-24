@@ -8,17 +8,33 @@
   <a href="#/userInfo">
     <div class="user-pic-info"></div>
     <div class="camera-wrapper">
-      <i class="icon ion-camera camera-place "></i>
+      <i class="icon ion-camera camera-place"></i>
     </div>
     <p class="user-nickname-info">{{email}}</p>
   </a>
 </div>
 <div class="list user-msg-wrapper">
-  <a class="item item-icon-right msg-input-wrapper" ng-click="show(x)" ng-repeat="x in userArray" href="#">
-    <span class="msg-tip">{{x.name}}</span>
-    <div class="icon msg-word">
-      <span class="msg-word-span">{{x.value}}</span>
-      <i class="ion-ios-arrow-right"></i>
-    </div>
-  </a>
+  <div ng-repeat="x in userArray">
+    <label class="item item-input item-select msg-input-wrapper" ng-if="x.name == '性别'">
+      <div class="input-label">
+        <span class="msg-tip">性别</span>
+      </div>
+      <select>
+        <option>男</option>
+        <option selected>女</option>
+      </select>
+    </label>
+    <a class="item item-icon-right msg-input-wrapper" ng-click="show(x)" ng-if="x.name != '性别'" href="#">
+      <span class="msg-tip">{{x.name}}</span>
+      <div class="icon msg-word">
+        <span class="msg-word-span">{{x.value}}</span>
+        <i class="ion-ios-arrow-right"></i>
+      </div>
+    </a>
+  </div>
+  <div style="text-align: center;">
+    <button class="button button-stable change-pass-btn" ng-click="goResetPassword()">
+      修改密码
+    </button>
+  </div>
 </div>

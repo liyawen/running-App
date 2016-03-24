@@ -1,3 +1,14 @@
 .float-right {
   float: right;
 }
+
+.big-bar {
+  background-color: #56CC9B;
+}
+
+#big-word {
+  height: 55px;
+  line-height: 55px;
+  font-size: 20px;
+  color: #fff;
+}

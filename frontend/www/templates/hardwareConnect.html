@@ -6,13 +6,13 @@
 </div>
 
 <div class="connect-wrapper" ng-click="tryConnect()">
-  <p class="connet-word">开始连接</p>
+  <p class="connect-word">{{text}}</p>
   <p class="connect-tip">请将设备贴近手机</p>
 </div>
 
 <div class="connecting" ng-hide="g">
-  <i class="icon ion-loop reflash"></i>
+  <i class="icon ion-load-c reflash"></i>
   <span>
     连接硬件蓝牙中...
-  </span>  
+  </span>
 </div>

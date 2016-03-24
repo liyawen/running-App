@@ -17,4 +17,8 @@ angular.module('starter.controllers')
     UserInfo.show(x, $scope, $ionicPopup);
   };
 
+  $scope.goResetPassword = function () {
+    $state.go('resetPassword');
+  }
+
 })

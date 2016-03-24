@@ -1,15 +1,33 @@
 <link rel="stylesheet" href="css/register.css">
-<div class="login-content bg" ng-app>
-  
-  <div class="list" style="margin: 0 10%;">
-  <label class="item item-input re-label-wrapper" ng-repeat="x in userMsg">
-    <span class="input-label re-span-wrapper">{{x.name}}</span>
-    <input class="re-input-wrapper" type="text" ng-model="x.value">
-  </label>
-  <div class="btn-wrapper">
+
+<div class="bar bar-header header-color">
+  <button class="button button-icon icon ion-ios-arrow-left header-color" ng-click="back()"></button>
+  <div class="h1 title header-color">个人信息完善</div>
+</div>
+<div class="list register-msg-wrapper">
+  <div ng-repeat="x in userMsg">
+    <label class="item item-input item-select register-input-wrapper" ng-if="x.name == '性别'">
+      <div class="input-label">
+        <span class="register-msg-tip">性别</span>
+      </div>
+      <select>
+        <option>男</option>
+        <option selected>女</option>
+      </select>
+    </label>
+    <a class="item item-icon-right register-input-wrapper" ng-click="show(x)" ng-if="x.name != '性别'" href="#">
+      <span class="register-msg-tip">{{x.name}}</span>
+      <div class="icon register-msg-word">
+        <span class="register-word-span">{{x.value}}</span>
+        <i class="ion-ios-arrow-right"></i>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="btn-wrapper">
     <button class="button button-calm btn-register" ng-click="getAllMsg()">
       完成
     </button>
   </div>
-  </div>
-</div>
+

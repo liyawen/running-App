@@ -52,6 +52,7 @@ angular.module('starter.services')
           ionicPopup.alert({
            title: userMsg[i].name + '没有填写！'
           });
+          return false;
         }
       }
       var params = {
@@ -71,10 +72,33 @@ angular.module('starter.services')
           $state.go('homePage');
         } else {
           ionicPopup.alert({
-               title: res.msg
-            });
+            title: res.msg
+          });
         }
       })
+    },
+    show: function (x, scope, ionicPopup) {
+      scope.currentValue = {};
+      scope.currentValue.value = x.value;
+       var myPopup = ionicPopup.show({
+        template: '<input type="text" style="padding-left: 20px;" ng-model="currentValue.value" />',
+        title: x.name,
+        scope: scope,
+        buttons: [{
+          text: '取消'
+        }, {
+          text: '<b>确定</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            if (scope.currentValue.value != x.value) {
+              x.value = scope.currentValue.value;
+            } else {
+              e.preventDefault();
+            }
+          }
+        }]
+      });
+      
     }
   }
 })

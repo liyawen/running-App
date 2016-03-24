@@ -1,5 +1,4 @@
 .hard-big-bar {
-  height: 55px;
   background-color: #2CAFD6;
 }
 
@@ -21,13 +20,14 @@
   border-radius: 110px;
   background-color: #3DCCF7;
   display: block;
-  padding: 88px 30px;
+  padding: 94px 30px;
 }
 
-.connet-word {
+.connect-word {
   color: #fff;
   text-align: center;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 24px;
 }
 
 .connect-tip {
@@ -52,7 +52,19 @@
   color: #1BD4EC;
   font-size: 31px;
   line-height: 30px;
-  transition: transform 0.4s ease-out; 
-  transform: rotate(360deg); 
-
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+

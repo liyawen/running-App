@@ -7,18 +7,6 @@
   background-color: #313234;
 }
 
-.big-bar {
-  height: 55px;
-  background-color: #56CC9B;
-}
-
-#big-word {
-  height: 55px;
-  line-height: 55px;
-  font-size: 20px;
-  color: #fff;
-}
-
 .data-msg {
   position: relative;
   padding-top: 55px;

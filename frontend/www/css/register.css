@@ -1,35 +1,3 @@
-div {
-  background-color: transparent;
-}
-
-.bg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-image: url(../img/backPic.jpg);
-  background-size: 100% 100%;
-}
-
-.re-label-wrapper {
-  background-color: transparent;
-  border: 0;
-  border-bottom: 1px solid #eee;
-  height: 46px;
-}
-
-.re-span-wrapper {
-  color: #ccc;
-  width: 20%;
-}
-
-.re-input-wrapper {
-  color: #ccc!important;
-}
-
-.btn-wrapper {
-  width: 70%;
-  margin: 20px auto 10px;
-}
 
 .btn-register {
   border-radius: 45px;
@@ -37,4 +5,55 @@ div {
   min-height: 45px;
   font-size: 18px;
   padding: 0px 39%;
+}
+
+.btn-wrapper {
+  width: 70%;
+  position: absolute;
+  bottom: 5%;
+  left: 15%;
+}
+
+.header-color {
+  background-color: #19AED0;
+  color: #fff !important;
+}
+
+.bar .title {
+  line-height: 53px !important;
+}
+
+.register-msg-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 25%;
+  overflow: auto;
+  height: 65%;
+}
+
+.register-input-wrapper {
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.register-msg-tip {
+  font-family: 'Microsoft YaHei';
+  font-size: 14px;
+  color: #000;
+  width: 50px;
+  max-width: 80px;
+}
+
+.register-msg-word {
+  font-size: 13px!important;
+  color: #777;
+}
+
+.register-word-span {
+  padding-right: 10px;
+}
+
+::-webkit-scrollbar  {
+  display: none;
 }
