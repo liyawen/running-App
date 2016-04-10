@@ -86,6 +86,52 @@ class RecordModel {
       };
     });
   }
+
+  getChartData(req) {
+    let rid = req.query.rid;
+    let type = req.query.type;
+    let validTypeList = [
+      'fatigueIndex',
+      'healthIndex',
+      // 'landingStrike',
+      'landingPronationAngle',
+      'impactPower',
+      'strideLength',
+      'xCOM',
+      'verticalMagnitude',
+      'averagePace',
+      'averageCadence'
+    ];
+    return Promise.resolve().then(() => {
+      if (!/^\d+$/.test(rid)) {
+        throw new Error('请求不合法');
+      } else if (validTypeList.indexOf(type) === -1) {
+        throw new Error('该类型不存在');
+      }
+    }).then(() => {
+      return db.query(`select count(1) as cnt from running_record where id = ${req.id} and rid = ${rid}`);
+    }).then(res => {
+      if (!res || res.length !== 1 || res[0].cnt !== 1) {
+        throw new Error('无此纪录');
+      }
+    }).then(() => {
+      return db.query(`select ${type} from receive_data where id = ${req.id} and rid = ${rid} order by datatime`);
+    }).then(res => {
+      let len = res.length;
+      let points = 20;
+      if (len >= points) {
+        let offset = parseInt(len / points, 10);
+        res = res.filter((row, index) => index % offset === 0);
+      }
+      return res.map(row => row[type]);
+    }).catch(err => {
+      return {
+        states: 1,
+        msg: err.message,
+        sql: err.sql
+      };
+    });;
+  }
 }
 
 module.exports = RecordModel;

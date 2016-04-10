@@ -35,7 +35,7 @@ router.post('/register', function (req, res, next) {
 
 /* Record Actions */
 router.get('/getRunRecords', function (req, res, next) {
-let model = new RecordModel();
+  let model = new RecordModel();
   auth.access(req, res).then(() => {
     model.getRunRecords(req).then(result => {
       res.send(JSON.stringify(result));
@@ -44,9 +44,18 @@ let model = new RecordModel();
 });
 
 router.get('/getRunDetail', function (req, res, next) {
-let model = new RecordModel();
+  let model = new RecordModel();
   auth.access(req, res).then(() => {
     model.getRunDetail(req).then(result => {
+      res.send(JSON.stringify(result));
+    });
+  });
+});
+
+router.get('/getChartData', function (req, res, next) {
+  let model = new RecordModel();
+  auth.access(req, res).then(() => {
+    model.getChartData(req).then(result => {
       res.send(JSON.stringify(result));
     });
   });

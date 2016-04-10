@@ -20,5 +20,4 @@ angular.module('starter.controllers')
   $scope.goResetPassword = function () {
     $state.go('resetPassword');
   }
-
 })

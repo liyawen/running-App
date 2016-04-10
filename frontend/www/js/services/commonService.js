@@ -13,12 +13,15 @@ angular.module('starter.services')
 })
 .factory('loadCookie', function ($cookies, $rootScope) {
   return function () {
-    if (!$rootScope.userInfo) {
-      var userInfo = $cookies.get('userInfo');
-      if (userInfo) {
-        $rootScope.userInfo = JSON.parse($cookies.get('userInfo'));
+    var checkCookie = function (key) {
+      if (!$rootScope[key]) {
+        var val = $cookies.get(key);
+        if (val) {
+          $rootScope[key] = JSON.parse($cookies.get(key));
+        }
       }
-    }
+    };
+    checkCookie('userInfo');
   }
 })
 .factory('back', function ($window) {

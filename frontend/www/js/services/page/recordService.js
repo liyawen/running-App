@@ -4,7 +4,6 @@ angular.module('starter.services')
   return {
     getDetail: function (rid, callback) {
       $http.get(buildUrl('/getRunDetail', {rid: rid})).success(function (res) {
-        console.log(res);
         var format = {
           fatigueIndex: [0, '%'],
           healthIndex: [0, '%'],

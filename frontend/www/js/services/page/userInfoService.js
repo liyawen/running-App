@@ -38,6 +38,32 @@ angular.module('starter.services')
     name: '踝关节宽度(cm)',
     code: 'ankleWidth'
   }];
+  function testMsg (x, ionicPopup, value) {
+      if (x.name !== '性别' && x.name !== '昵称') {
+        if (/^(0|[1-9][0-9]{0,2})$/.test(value)) {
+          return true;
+        } else {
+          console.log(value)
+          ionicPopup.alert({
+            title: '请填写正确的数字！'
+          });
+          return false;
+        }
+      } else if (x.name === '性别') {
+        console.log("yyey");
+
+      } else if (x.name === '昵称') {
+        if (/^[a-zA-Z0-9_. ]{1,30}$/.test(value)) {
+          return true;
+        } else {
+          ionicPopup.alert({
+            title: '昵称只能为数字、字母、空格、点和下划线！'
+          });
+          return false;
+        }
+      }
+      
+    }
   return {
     getMsg: function () {
       var userInfo = $rootScope.userInfo;
@@ -66,7 +92,8 @@ angular.module('starter.services')
           text: '<b>确定</b>',
           type: 'button-positive',
           onTap: function(e) {
-            if (scope.currentValue.value != x.value) {
+            if (testMsg(x, ionicPopup, scope.currentValue.value)) {
+              if (scope.currentValue.value != x.value) {
               $http.get(buildUrl('/modifyUserInfo', {code: x.code, value: scope.currentValue.value})).success(function (res) {
                 if (res.status != 0) {
                   ionicPopup.alert({
@@ -81,10 +108,11 @@ angular.module('starter.services')
             } else {
               e.preventDefault();
             }
+            }
+            
           }
         }]
       });
-      
     }
   }
 })

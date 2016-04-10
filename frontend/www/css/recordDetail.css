@@ -7,11 +7,15 @@
   background-color: #313234;
 }
 
-.chart-area {
+.chart-wrapper {
   position: fixed;
   padding: 0 5%;
   box-sizing: border-box;
   width: 100%;
   top: 35%;
   height: 30%;
+}
+
+.chart-area {
+  width: 100%;
 }

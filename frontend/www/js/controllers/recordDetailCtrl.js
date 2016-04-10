@@ -1,11 +1,35 @@
 angular.module('starter.controllers')
 
-.controller('recordDetailCtrl', function ($scope, $ionicPopup, $rootScope, $stateParams, Record, back) {
-  $scope.detail = $rootScope.currentDetail;
+.controller('recordDetailCtrl', function (
+  $scope,
+  $ionicPopup,
+  $rootScope,
+  $stateParams,
+  Record,
+  RecordDetail,
+  back,
+  loadCookie
+) {
+  loadCookie();
+  var rid = parseInt($stateParams.rid);
+  var type = $stateParams.type;
   $scope.goback = back;
-  $scope.labels = [' ', ' ', ' ', ' ', ' ', ' ', ' '];
-  $scope.series = [''];
-  $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40]
-  ];
+  Record.getDetail(rid, function (detail) {
+    $scope.detail = detail;
+  });
+
+  RecordDetail.getChartData(rid, type, function (data) {
+    $scope.data = data;
+    $scope.labels = $scope.data[0].map(function (item) {
+      return ' ';
+    });
+  });
+  $scope.options = {
+    showTooltips: false,
+    scaleShowGridLines: false,
+    scaleShowHorizontalLines: false,
+    scaleShowVerticalLines: false,
+    pointDot : false
+  };
+  $scope.showTooltip = false;
 })

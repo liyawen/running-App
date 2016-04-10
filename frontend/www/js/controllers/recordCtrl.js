@@ -5,7 +5,6 @@ angular.module('starter.controllers')
   $scope.goback = back;
   Record.getDetail(rid, function (detail) {
     $scope.detail = detail;
-    $rootScope.currentDetail = detail;
   });
 
   $scope.gotoChart = function (type) {
