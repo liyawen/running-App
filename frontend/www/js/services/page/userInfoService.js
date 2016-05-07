@@ -39,31 +39,31 @@ angular.module('starter.services')
     code: 'ankleWidth'
   }];
   function testMsg (x, ionicPopup, value) {
-      if (x.name !== '性别' && x.name !== '昵称') {
-        if (/^(0|[1-9][0-9]{0,2})$/.test(value)) {
-          return true;
-        } else {
-          console.log(value)
-          ionicPopup.alert({
-            title: '请填写正确的数字！'
-          });
-          return false;
-        }
-      } else if (x.name === '性别') {
-        console.log("yyey");
-
-      } else if (x.name === '昵称') {
-        if (/^[a-zA-Z0-9_. ]{1,30}$/.test(value)) {
-          return true;
-        } else {
-          ionicPopup.alert({
-            title: '昵称只能为数字、字母、空格、点和下划线！'
-          });
-          return false;
-        }
+    if (x.name !== '性别' && x.name !== '昵称') {
+      if (/^(0|[1-9][0-9]{0,2})$/.test(value)) {
+        return true;
+      } else {
+        console.log(value)
+        ionicPopup.alert({
+          title: '请填写正确的数字！'
+        });
+        return false;
       }
-      
-    }
+    } else if (x.name === '性别') {
+      console.log("yyey");
+
+    } else if (x.name === '昵称') {
+      if (/^[a-zA-Z0-9_. ]{1,30}$/.test(value)) {
+        return true;
+      } else {
+        ionicPopup.alert({
+          title: '昵称只能为数字、字母、空格、点和下划线！'
+        });
+        return false;
+      }
+    } 
+  }
+  
   return {
     getMsg: function () {
       var userInfo = $rootScope.userInfo;
