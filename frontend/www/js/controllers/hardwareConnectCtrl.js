@@ -1,6 +1,8 @@
 angular.module('starter.controllers')
 
-.controller('hardwareConnectCtrl', function ($scope, $state, $stateParams, HardwareConnect, back) {
+.controller('hardwareConnectCtrl', function ($scope, $state, $stateParams, HardwareConnect, back, checkLogin) {
+  if (!checkLogin($state)) return;
+
   function getText() {
     return $scope.g && '开始连接' || '放弃连接';
   }

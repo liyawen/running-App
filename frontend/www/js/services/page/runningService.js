@@ -1,11 +1,12 @@
 function random(left, right, isInt) {
-    let size = right - left;
-    let ret = Math.random() * size + left;
-    if (isInt) {
-        ret = parseInt(ret, 10);
-    }
-    return ret;
+  var size = right - left;
+  var ret = Math.random() * size + left;
+  if (isInt) {
+    ret = parseInt(ret, 10);
+  }
+  return ret;
 }
+
 var fields = {
   distance: [0.001, 0.002],
   averagePace: [5, 10],

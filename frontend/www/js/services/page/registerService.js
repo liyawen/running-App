@@ -39,7 +39,11 @@ angular.module('starter.services')
     code: 'ankleWidth'
   }];
   userMsg.forEach(function (msg) {
-    msg.value = '';
+    if (msg.code === 'gendle') {
+      msg.value = '1'
+    } else {
+      msg.value = '';
+    }
   });
 
   return {
@@ -47,6 +51,7 @@ angular.module('starter.services')
       return userMsg;
     },
     getAllMsg: function (scope, ionicPopup) {
+      console.log(userMsg);
       for (var i = 0; i < userMsg.length; i++) {
         if (userMsg[i].name != '性别' && userMsg[i].value == '') {
           ionicPopup.alert({
@@ -68,7 +73,7 @@ angular.module('starter.services')
         if (res.status == 0) {
           $rootScope.userInfo.email = res.email;
           $rootScope.userInfo.token = res.token;
-          $rootScope.userInfo.userId = res.userId;
+          $rootScope.userInfo.id = res.userId;
           $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
           scope.k = false;
           $state.go('homePage');
@@ -100,7 +105,6 @@ angular.module('starter.services')
           }
         }]
       });
-
     }
   }
 })

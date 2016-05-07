@@ -11,6 +11,19 @@ angular.module('starter.services')
     }
   }
 })
+.factory('checkLogin', function ($cookies, $rootScope) {
+  return function ($state) {
+    if (!$rootScope.userInfo) {
+      if ($cookies.get('userInfo')) {
+        $rootScope.userInfo = JSON.parse($cookies.get('userInfo'));
+      } else {
+        $state.go('login');
+        return false;
+      }
+    }
+    return true;
+  };
+})
 .factory('loadCookie', function ($cookies, $rootScope) {
   return function () {
     var checkCookie = function (key) {

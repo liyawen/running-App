@@ -1,14 +1,22 @@
 angular.module('starter.controllers')
 
-.controller('homePageCtrl', function($scope, $state, $ionicPopup, $cookies, $rootScope, $timeout, $ionicSideMenuDelegate, homePage) {
+.controller('homePageCtrl', function(
+  $scope,
+  $state,
+  $ionicPopup,
+  $cookies,
+  $rootScope,
+  $timeout,
+  $ionicSideMenuDelegate,
+  homePage,
+  checkLogin
+) {
   $ionicSideMenuDelegate.toggleLeft();
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
 
-  if (!$rootScope.userInfo) {
-    $rootScope.userInfo = JSON.parse($cookies.get('userInfo'));
-  }
+  if (!checkLogin($state)) return;
 
   $scope.nickname = $rootScope.userInfo.nickname;
   $scope.$on('$ionicView.beforeEnter', function () {

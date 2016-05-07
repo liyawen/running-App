@@ -1,6 +1,7 @@
 angular.module('starter.controllers')
 
-.controller('recordCtrl', function ($scope, $state, $stateParams, $rootScope, Record, back) {
+.controller('recordCtrl', function ($scope, $state, $stateParams, $rootScope, Record, back, checkLogin) {
+  if (!checkLogin($state)) return;
   var rid = parseInt($stateParams.rid);
   $scope.goback = back;
   Record.getDetail(rid, function (detail) {

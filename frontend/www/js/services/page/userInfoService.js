@@ -43,17 +43,15 @@ angular.module('starter.services')
       if (/^(0|[1-9][0-9]{0,2})$/.test(value)) {
         return true;
       } else {
-        console.log(value)
         ionicPopup.alert({
           title: '请填写正确的数字！'
         });
         return false;
       }
     } else if (x.name === '性别') {
-      console.log("yyey");
 
     } else if (x.name === '昵称') {
-      if (/^[a-zA-Z0-9_. ]{1,30}$/.test(value)) {
+      if (/^[a-zA-Z0-9_\.\ \u2E80-\u9FFF]{1,30}$/.test(value)) {
         return true;
       } else {
         ionicPopup.alert({
@@ -61,9 +59,9 @@ angular.module('starter.services')
         });
         return false;
       }
-    } 
+    }
   }
-  
+
   return {
     getMsg: function () {
       var userInfo = $rootScope.userInfo;
@@ -75,6 +73,23 @@ angular.module('starter.services')
         }
       });
       return userMsg;
+    },
+    changeGendle: function (scope, value, ionicPopup) {
+      var me = this;
+      $http.get(buildUrl('/modifyUserInfo', {
+        code: 'gendle',
+        value: value
+      })).success(function (res) {
+        if (res.status != 0) {
+          ionicPopup.alert({
+            title: '修改失败' + res.msg
+          });
+        } else {
+          $rootScope.userInfo = res.userInfo;
+          $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
+          scope.userArray = me.getMsg();
+        }
+      });
     },
     show: function (x, scope, ionicPopup) {
       var me = this;
@@ -94,22 +109,22 @@ angular.module('starter.services')
           onTap: function(e) {
             if (testMsg(x, ionicPopup, scope.currentValue.value)) {
               if (scope.currentValue.value != x.value) {
-              $http.get(buildUrl('/modifyUserInfo', {code: x.code, value: scope.currentValue.value})).success(function (res) {
-                if (res.status != 0) {
-                  ionicPopup.alert({
-                    title: '修改失败' + res.msg
-                  });
-                } else {
-                  $rootScope.userInfo = res.userInfo;
-                  $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
-                  scope.userArray = me.getMsg();
-                }
-              })
-            } else {
-              e.preventDefault();
+                $http.get(buildUrl('/modifyUserInfo', {
+                  code: x.code,
+                  value: scope.currentValue.value
+                })).success(function (res) {
+                  if (res.status != 0) {
+                    ionicPopup.alert({
+                      title: '修改失败' + res.msg
+                    });
+                  } else {
+                    $rootScope.userInfo = res.userInfo;
+                    $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
+                    scope.userArray = me.getMsg();
+                  }
+                });
+              }
             }
-            }
-            
           }
         }]
       });

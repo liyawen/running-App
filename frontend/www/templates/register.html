@@ -10,9 +10,9 @@
       <div class="input-label">
         <span class="register-msg-tip">性别</span>
       </div>
-      <select>
-        <option>男</option>
-        <option selected>女</option>
+      <select ng-model="x.value">
+        <option value="1">男</option>
+        <option value="0">女</option>
       </select>
     </label>
     <a class="item item-icon-right register-input-wrapper" ng-click="show(x)" ng-if="x.name != '性别'" href="#">

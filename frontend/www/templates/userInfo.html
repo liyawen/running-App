@@ -19,9 +19,9 @@
       <div class="input-label">
         <span class="msg-tip">性别</span>
       </div>
-      <select ng-model="sex">
-        <option>男</option>
-        <option selected>女</option>
+      <select ng-model="x.value" ng-change="changeGendle(x.value)">
+        <option value="1">男</option>
+        <option value="0">女</option>
       </select>
     </label>
     <a class="item item-icon-right msg-input-wrapper" ng-click="show(x)" ng-if="x.name != '性别'" href="#">

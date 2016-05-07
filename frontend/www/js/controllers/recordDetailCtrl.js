@@ -4,13 +4,15 @@ angular.module('starter.controllers')
   $scope,
   $ionicPopup,
   $rootScope,
+  $state,
   $stateParams,
   Record,
   RecordDetail,
   back,
-  loadCookie
+  loadCookie,
+  checkLogin
 ) {
-  loadCookie();
+  if (!checkLogin($state)) return;
   var rid = parseInt($stateParams.rid);
   var type = $stateParams.type;
   $scope.goback = back;
@@ -20,9 +22,11 @@ angular.module('starter.controllers')
 
   RecordDetail.getChartData(rid, type, function (data) {
     $scope.data = data;
-    $scope.labels = $scope.data[0].map(function (item) {
-      return ' ';
-    });
+    if ($scope.data[0]) {
+      $scope.labels = $scope.data[0].map(function (item) {
+        return ' ';
+      });
+    }
   });
   $scope.options = {
     showTooltips: false,
