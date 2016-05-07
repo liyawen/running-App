@@ -161,6 +161,7 @@ class UserModel {
         status: 0,
         email: email,
         token: util.sha1(salt),
+        userId: res.insertId,
         msg: '插入成功'
       };
     }).catch(function (err) {

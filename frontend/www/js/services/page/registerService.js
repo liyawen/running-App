@@ -68,6 +68,7 @@ angular.module('starter.services')
         if (res.status == 0) {
           $rootScope.userInfo.email = res.email;
           $rootScope.userInfo.token = res.token;
+          $rootScope.userInfo.userId = res.userId;
           $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
           scope.k = false;
           $state.go('homePage');
