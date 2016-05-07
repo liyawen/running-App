@@ -67,6 +67,7 @@ angular.module('starter.services')
       $http.post(buildUrl('/register'), params).success(function (res) {
         if (res.status == 0) {
           $rootScope.userInfo.email = res.email;
+          $rootScope.userInfo.token = res.token;
           $cookies.put('userInfo', JSON.stringify($rootScope.userInfo));
           scope.k = false;
           $state.go('homePage');
@@ -98,7 +99,7 @@ angular.module('starter.services')
           }
         }]
       });
-      
+
     }
   }
 })
