@@ -9,7 +9,7 @@ angular.module('starter.controllers')
   if (!$rootScope.userInfo) {
     $rootScope.userInfo = JSON.parse($cookies.get('userInfo'));
   }
-  
+
   $scope.nickname = $rootScope.userInfo.nickname;
   $scope.$on('$ionicView.beforeEnter', function () {
     $scope.nickname = $rootScope.userInfo.nickname;

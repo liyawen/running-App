@@ -64,9 +64,37 @@ router.get('/getChartData', function (req, res, next) {
 router.get('/modifyUserInfo', function (req, res, next) {
   auth.access(req, res).then(() => {
     let model = new UserModel();
-    model.modifyUserInfo(req).then(function (result) {
+    model.modifyUserInfo(req).then(result => {
       res.send(JSON.stringify(result));
-    }); 
+    });
+  });
+});
+
+/* Running Actions */
+router.get('/newRecord', function (req, res, next) {
+  auth.access(req, res).then(() => {
+    let model = new RecordModel();
+    model.createRecord(req).then(result => {
+      res.send(JSON.stringify(result));
+    });
+  });
+});
+
+router.get('/endRecord', function (req, res, next) {
+  auth.access(req, res).then(() => {
+    let model = new RecordModel();
+    model.endRecord(req).then(result => {
+      res.send(JSON.stringify(result));
+    });
+  });
+});
+
+router.post('/uploadData', function (req, res, next) {
+  auth.access(req, res).then(() => {
+    let model = new RecordModel();
+    model.uploadData(req).then(result => {
+      res.send(JSON.stringify(result));
+    });
   });
 });
 

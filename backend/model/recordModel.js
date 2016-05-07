@@ -2,6 +2,7 @@
 
 const util = require('./util');
 const db = require('./db');
+const moment = require('moment');
 
 class RecordModel {
   getRunRecords(req) {
@@ -130,7 +131,55 @@ class RecordModel {
         msg: err.message,
         sql: err.sql
       };
-    });;
+    });
+  }
+
+  createRecord(req) {
+    let sql = `insert into running_record (id, startTime) values (${req.id}, '${moment().format('YYYY-MM-DD HH:mm:ss')}')`;
+    return db.query(sql).then(res => {
+      return {
+        id: res.insertId
+      };
+    }).catch(err => {
+      return {
+        states: 1,
+        msg: err.message,
+        sql: err.sql
+      };
+    });
+  }
+
+  uploadData(req) {
+    let data = req.body;
+    data.id = req.id;
+    let fields = Object.keys(data);
+    let sql = `insert into receive_data (${fields.join(', ')}) values\n`
+      + `(${fields.map(field => `'${data[field]}'`).join(', ')})`;
+    return db.query(sql).then(res => {
+    }).catch(err => {
+      return {
+        states: 1,
+        msg: err.message,
+        sql: err.sql
+      };
+    });
+  }
+
+  endRecord(req) {
+    let rid = req.query.rid;
+    let sql = `update running_record set endTime = '${moment().format('YYYY-MM-DD HH:mm:ss')} where id = ${rid}'`;
+    return db.query(sql).then(res => {
+      return {
+        status: 0,
+        msg: 'success'
+      };
+    }).catch(err => {
+      return {
+        states: 1,
+        msg: err.message,
+        sql: err.sql
+      };
+    });
   }
 }
 

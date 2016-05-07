@@ -104,7 +104,17 @@ angular.module('starter.services')
     },
 
     uploadData: function (data) {
+      if (!curRecordId) {
+        return;
+      }
+      data.rid = curRecordId;
       $http.post(buildUrl('/uploadData'), data);
+    },
+
+    end: function (callback) {
+      $http.get(buildUrl('/endRecord')).success(function (res) {
+        callback();
+      });
     }
   };
 })

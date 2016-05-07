@@ -27,46 +27,55 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   $stateProvider
   .state('login', {
     url: '/login',
+    cache: false,
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
   })
   .state('register', {
     url: '/register',
+    cache: false,
     templateUrl: 'templates/register.html',
     controller: 'registerCtrl'
   })
   .state('homePage', {
     url: '/homePage',
+    cache: false,
     templateUrl: 'templates/homePage.html',
     controller: 'homePageCtrl'
   })
   .state('record', {
     url: '/runRecord/:rid',
+    cache: false,
     templateUrl: 'templates/record.html',
     controller: 'recordCtrl'
   })
   .state('recordDetail', {
     url: '/recordDetail/:type/:rid/',
+    cache: false,
     templateUrl: 'templates/recordDetail.html',
     controller: 'recordDetailCtrl'
   })
   .state('userInfo', {
     url: '/userInfo',
+    cache: false,
     templateUrl: 'templates/userInfo.html',
     controller: 'userInfoCtrl'
   })
   .state('running', {
     url: 'running',
+    cache: false,
     templateUrl: 'templates/running.html',
     controller: 'runningCtrl'
   })
   .state('hardwareConnect', {
     url: '/hardwareConnect',
+    cache: false,
     templateUrl: 'templates/hardwareConnect.html',
     controller: 'hardwareConnectCtrl'
   })
   .state('resetPassword', {
     url: 'resetPassword',
+    cache: false,
     templateUrl: 'templates/resetPassword.html',
     controller: 'resetPasswordCtrl'
   });

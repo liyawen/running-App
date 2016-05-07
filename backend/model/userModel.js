@@ -76,7 +76,6 @@ class UserModel {
         ('${email}', '${newPass.value}', '${newPass.salt}')`;
       return db.query(sql);
     }).then(function (res) {
-      console.log(res);
       return {
         status: 0,
         msg: '插入成功',
@@ -177,7 +176,6 @@ class UserModel {
     let id = req.id;
 
     return db.query(`update user set ${code} = '${value}' where id = '${id}'`).then(function (res) {
-      console.log(res);
       if (res.affectedRows <= 0) {
         return new Error('插入失败！');
       } else {

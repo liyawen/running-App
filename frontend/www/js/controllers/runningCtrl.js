@@ -34,6 +34,12 @@ angular.module('starter.controllers')
         clearInterval(interval);
       }
       $scope.actionName = 'Start';
+      Running.end(function () {
+        var id = Running.getRecordId();
+        $state.go('record', {
+          rid: id
+        });
+      });
     }
   };
 });
