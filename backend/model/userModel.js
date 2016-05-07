@@ -160,7 +160,7 @@ class UserModel {
       return {
         status: 0,
         email: email,
-        token: util.sha1(res[0].salt),
+        token: util.sha1(salt),
         msg: '插入成功'
       };
     }).catch(function (err) {
