@@ -8,50 +8,46 @@
 
     <div class="row-data">
       <div class="button button-clear button-stable btn-gap">
-        180<span class="run-small-unit">/min</span>
+        {{data.averageCadence}}<span class="run-small-unit">/min</span>
         <label class="run-small-word">步频</label>
       </div>
       <div class="button button-clear button-stable btn-gap">
-       7.2<span class="run-small-unit">km/h</span>
+        {{data.averagePace}}<span class="run-small-unit">km/h</span>
         <label class="run-small-word">平均速度</label>
       </div>
       <div class="button button-clear button-stable btn-gap">
-        5.3<span class="run-small-unit">km</span>
+        {{data.distance}}<span class="run-small-unit">km</span>
         <label class="run-small-word">里程</label>
       </div>
       <div class="button button-clear button-stable btn-gap" style="margin-right:0;">
-        200<span class="run-small-unit">min</span>
+        {{data.runTime}}<span class="run-small-unit">min</span>
         <label class="run-small-word">运动时长</label>
       </div>
     </div>
-    
+
     <div class="circle-wrapper">
       <div class="inside-circle">
         <div class="button button-clear button-stable btn-gap circle-btn">
-          73%
-          <label class="run-small-word">疲劳指数</label>
+          {{data.fatigueIndex}}<label class="run-small-word">疲劳指数</label>
         </div>
         <div class="button button-clear button-stable btn-gap circle-btn">
-          23%
-          <label class="run-small-word">Last 5 min</label>
+          {{data.fatigueIndexLast}}<label class="run-small-word">Last 5 min</label>
         </div>
       </div>
     </div>
 
     <div class="alone-word">
       <div class="button button-clear button-stable btn-gap circle-btn">
-          83%
-          <label class="run-small-word">健康指数</label>
-        </div>
+        {{data.healthIndex}}<label class="run-small-word">健康指数</label>
+      </div>
     </div>
 
     <div class="run-status">
-      <button class="button button-positive run-status-btn">
-        START
+      <button ng-click="toggle()" class="button button-positive run-status-btn">
+        {{actionName}}
       </button>
     </div>
 
   </div>
 
-  
 
