@@ -141,12 +141,14 @@ class UserModel {
       });
     }
     let email = '';
+    let salt = '';
 
     return db.query(`select * from user_tmp where id = '${currentTid}'`).then(function (res) {
       if (res.length <= 0) {
         return new Error('不存在该用户！');
       } else {
         email = res[0].email;
+        salt = res[0].salt;
         let sql = `insert into user (email, password, nickname, gendle, age, 
           height, weight, shoeSize, pelvisHeight, pelvisWidth, KneeHeight, KneeWidth, 
           AnkleHeight, AnkleWidth, salt) VALUES ('${res[0].email}','${res[0].password}','${userMsg[0].value}',
@@ -158,6 +160,7 @@ class UserModel {
       return {
         status: 0,
         email: email,
+        token: util.sha1(res[0].salt),
         msg: '插入成功'
       };
     }).catch(function (err) {
