@@ -48,7 +48,7 @@ angular.module('starter.services')
     },
     getAllMsg: function (scope, ionicPopup) {
       for (var i = 0; i < userMsg.length; i++) {
-        if (userMsg[i].value == '') {
+        if (userMsg[i].name != '性别' && userMsg[i].value == '') {
           ionicPopup.alert({
            title: userMsg[i].name + '没有填写！'
           });
