@@ -27,7 +27,7 @@ var map1 = ['frontHeelStrike','midFootStrike','backHeelStrike'];
 var map2 = ['normalPronation','overPronation','underpronation'];
 var curState = null;
 var curRecordId = null;
-var
+var fatigueMap = null;
 
 angular.module('starter.services')
 
@@ -38,7 +38,7 @@ angular.module('starter.services')
     },
 
     initial: function (callback) {
-      var curState = {
+      curState = {
         averageCadence: 0,
         aveargePace: 0,
         distance: 0,
@@ -47,10 +47,24 @@ angular.module('starter.services')
         fatigueIndexLast: 1,
         healthIndex: 1
       };
+      fatigueMap = [];
       $http.get(buildUrl('/newRecord')).success(function (res) {
         curRecordId = res.id;
         callback();
       });
+    },
+
+    fatigueIndexLast: function (time) {
+      var sum = 0;
+      var count = 0;
+      for (var i = fatigueMap.length - 1; i >= 0; i--) {
+        if (time - fatigueMap[i].datatime > 5 * 60 * 1000) {
+          break;
+        }
+        sum += fatigueMap[i].fatigueIndex;
+        count += 1;
+      }
+      return sum / count;
     },
 
     getRandomData: function () {
@@ -70,9 +84,13 @@ angular.module('starter.services')
         distance: curState.distance + row.distance,
         runTime: curState.runTime + row.runTime,
         fatigueIndex: row.fatigueIndex,
-        fatigueIndexLast: '--',
+        fatigueIndexLast: this.fatigueIndexLast(row.datatime),
         healthIndex: row.healthIndex
       };
+      fatigueMap.push({
+        datatime: row.datatime,
+        fatigueIndex: row.fatigueIndex
+      });
       curState = JSON.parse(JSON.stringify(initialState));
 
       ['averageCadence', 'averagePace', 'distance', 'runTime'].forEach(function (field) {

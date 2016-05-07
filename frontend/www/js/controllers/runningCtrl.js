@@ -23,10 +23,12 @@ angular.module('starter.controllers')
   $scope.toggle = function () {
     currentState = !currentState;
     if (currentState) {
-      interval = setInterval(function () {
-        $scope.$apply(updateData);
-      }, 500);
-      $scope.actionName = 'Stop';
+      Running.initial(function () {
+        interval = setInterval(function () {
+          $scope.$apply(updateData);
+        }, 500);
+        $scope.actionName = 'Stop';
+      });
     } else {
       if (interval) {
         clearInterval(interval);
