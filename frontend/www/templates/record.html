@@ -2,7 +2,7 @@
 
   <div class="record-content">
     <div class="bar bar-header big-bar">
-      <a class="button button-icon icon ion-ios-arrow-back" style="color:#fff;" ng-click="goback()"></a>
+      <a class="button button-icon icon ion-ios-arrow-back" style="color:#fff;" ng-click="goback('homePage')"></a>
       <div class="h1 title" id="big-word">{{detail.showTime}}</div>
     </div>
     <div class="data-msg">
@@ -17,29 +17,29 @@
         </button>
       </div>
       <div class="other-row-data">
-        <button ng-click="gotoChart('landingStrike')" class="button button-clear button-stable btn-gap btn-font-size">
+        <button class="button button-clear button-stable btn-gap" style="font-size: 20px; line-height: 30px">
           {{detail.landingStrike}}
           <label class="small-word">落地姿态</label>
         </button>
-        <button ng-click="gotoChart('landingPronationAngle')" class="button button-clear button-stable btn-gap btn-font-size">
+        <button class="button button-clear button-stable btn-gap" style="font-size: 20px; line-height: 30px">
           {{detail.landingPronationAngle}}<span class="small-unit">度</span>
           <label class="small-word">落地内旋</label>
         </button>
-        <button ng-click="gotoChart('impactPower')" class="button button-clear button-stable btn-font-size">
+        <button class="button button-clear button-stable" style="font-size: 20px; line-height: 30px">
           {{detail.impactPower}}<span class="small-unit">G</span>
           <label class="small-word">落地冲量</label>
         </button>
       </div>
       <div class="other-row-data">
-        <button ng-click="gotoChart('strideLength')" class="button button-clear button-stable btn-gap btn-font-size">
+        <button class="button button-clear button-stable btn-gap" style="font-size: 20px; line-height: 30px">
           {{detail.strideLength}}<span class="small-unit">cm</span>
           <label class="small-word">步幅</label>
         </button>
-        <button ng-click="gotoChart('xCOM')" class="button button-clear button-stable btn-gap btn-font-size">
+        <button class="button button-clear button-stable btn-gap" style="font-size: 20px; line-height: 30px">
           {{detail.xCOM}}<span class="small-unit">mm</span>
           <label class="small-word">xCOM</label>
         </button>
-        <button ng-click="gotoChart('verticalMagnitude')" class="button button-clear button-stable btn-font-size">
+        <button class="button button-clear button-stable" style="font-size: 20px; line-height: 30px">
           {{detail.verticalMagnitude}}<span class="small-unit">mm</span>
           <label class="small-word">垂直运动幅度</label>
         </button>
@@ -56,11 +56,11 @@
           {{detail.averagePace}}<span class="small-unit">km/h</span>
           <label class="small-word small-word-color">平均速度</label>
         </button>
-        <button ng-click="gotoChart('distance')" class="button button-clear button-stable last-btn-gap btn-font-size">
+        <button class="button button-clear button-stable last-btn-gap" style="font-size: 20px; line-height: 30px">
           {{detail.distance}}<span class="small-unit">km</span>
           <label class="small-word small-word-color">里程</label>
         </button>
-        <button ng-click="gotoChart('runTime')" class="button button-clear button-stable btn-font-size" style="color: #fff!important;">
+        <button class="button button-clear button-stable" style="font-size: 20px; line-height: 30px">
           {{detail.runTime}}<span class="small-unit">min</span>
           <label class="small-word small-word-color">运动时长</label>
         </button>

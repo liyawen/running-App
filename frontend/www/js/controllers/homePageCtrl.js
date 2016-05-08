@@ -11,12 +11,12 @@ angular.module('starter.controllers')
   homePage,
   checkLogin
 ) {
+  if (!checkLogin($state)) return;
+
   $ionicSideMenuDelegate.toggleLeft();
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
-
-  if (!checkLogin($state)) return;
 
   $scope.nickname = $rootScope.userInfo.nickname;
   $scope.$on('$ionicView.beforeEnter', function () {

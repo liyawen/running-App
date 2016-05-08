@@ -16,7 +16,7 @@ angular.module('starter.controllers')
   }
 
   // $scope.register = function () {
-  //     $scope.confirmPassword.
+  //   $scope.confirmPassword.
   // }
   $scope.jumpRegister = function () {
     Login.jumpRegister($scope, $ionicPopup);

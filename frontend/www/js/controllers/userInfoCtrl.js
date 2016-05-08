@@ -1,10 +1,23 @@
 angular.module('starter.controllers')
 
-.controller('userInfoCtrl', function ($scope, $rootScope, $cookies, $ionicActionSheet, $timeout, $state, $ionicPopup, $stateParams, UserInfo, checkLogin) {
+.controller('userInfoCtrl', function (
+  $scope,
+  $rootScope,
+  $cookies,
+  $ionicActionSheet,
+  $timeout,
+  $state,
+  $ionicPopup,
+  $stateParams,
+  UserInfo,
+  checkLogin,
+  back
+) {
   if (!checkLogin($state)) return;
 
   $scope.email = $rootScope.userInfo.email;
   $scope.userArray = UserInfo.getMsg();
+  $scope.goback = back;
 
   $scope.backHome = function () {
     $scope.nickname = $rootScope.userInfo.nickname;

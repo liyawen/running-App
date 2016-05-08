@@ -13,12 +13,19 @@ angular.module('starter.controllers')
   checkLogin
 ) {
   if (!checkLogin($state)) return;
+
   var rid = parseInt($stateParams.rid);
   var type = $stateParams.type;
   $scope.goback = back;
   Record.getDetail(rid, function (detail) {
     $scope.detail = detail;
   });
+  $scope.typeTitle = {
+    fatigueIndex: '疲劳指数',
+    healthIndex: '健康指数',
+    averageCadence: '步频',
+    averagePace: '平均速度'
+  }[type] || '';
 
   RecordDetail.getChartData(rid, type, function (data) {
     $scope.data = data;

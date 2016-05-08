@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
 .controller('registerCtrl', function ($scope, $state, $ionicPopup, Register, back) {
 
-  $scope.back = back;
+  $scope.goback = back;
 
   $scope.userMsg = Register.all();
 
